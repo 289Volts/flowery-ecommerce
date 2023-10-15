@@ -6,7 +6,7 @@ export default function Home() {
 		<main className="">
 			<h1 className="text-desktopHeading1">Hello world</h1>
 			<Button
-				variant="primary"
+				variant="secondary"
 				className=""
 			>
 				Hello
