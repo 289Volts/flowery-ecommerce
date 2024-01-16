@@ -1,20 +1,16 @@
-import React from 'react';
 import { cn } from '@/lib/utils';
+import React, { ComponentPropsWithoutRef } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
 const button = tv({
 	base: 'md:focus-visible:outline-2 md:focus-visible:outline-dotted md:focus-visible:outline-offset-[2px] text-mobileButton md:text-desktopButton hover:transition hover:duration-500',
 	variants: {
 		variant: {
-			primary:
-				'bg-black text-white border-none border-none py-4 px-6 flex gap-2 items-center uppercase',
-			secondary:
-				'bg-white text-black border border-black py-4 px-6 flex gap-2 items-center uppercase',
-			tertiary:
-				'bg-black border-white text-white border py-4 px-6 flex gap-2 items-center uppercase',
+			primary: 'bg-black text-white border-none border-none py-4 px-6 flex gap-2 items-center uppercase',
+			secondary: 'bg-white text-black border border-black py-4 px-6 flex gap-2 items-center uppercase',
+			tertiary: 'bg-black border-white text-white border py-4 px-6 flex gap-2 items-center uppercase',
 			textIcon: 'flex items-center gap-2'
-		},
-		type: {}
+		}
 	},
 	compoundVariants: [
 		{
@@ -48,9 +44,21 @@ type ButtonVariants = VariantProps<typeof button>;
 interface ButtonProps extends ButtonVariants {
 	children?: React.ReactNode;
 	className?: string;
+	buttonProps?: ComponentPropsWithoutRef<'button'>;
 }
-const Button: React.FC<ButtonProps> = ({ children, className, ...props }) => {
-	return <button className={cn(button(props), className)}>{children}</button>;
+
+interface IButtonProps extends React.ComponentPropsWithRef<'button'> {
+	buttonProps?: ComponentPropsWithoutRef<'button'>;
+}
+const Button: React.FC<ButtonProps> = ({ children, className, buttonProps,  ...props }) => {
+	return (
+		<button
+			{...buttonProps}
+			className={cn(button(props), className)}
+		>
+			{children}
+		</button>
+	);
 };
 
 export default Button;

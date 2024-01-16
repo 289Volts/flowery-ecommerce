@@ -1,17 +1,17 @@
 import { FC, ReactNode } from 'react';
-import Header from './Header';
 import Footer from './Footer';
+import Header from './Header';
 
 type LayoutProp = {
-	className: string;
+	className?: string;
 	children: ReactNode;
 };
-const Layout: FC<LayoutProp> = ({ children, className }) => {
+const Layout: FC<LayoutProp> = ({ children }) => {
 	return (
 		<>
-			<Header font={className} />
-			<main className={`className`}>{children}</main>
-			<Footer font={className} />
+			<Header />
+			<main className="">{children}</main>
+			<Footer />
 		</>
 	);
 };
