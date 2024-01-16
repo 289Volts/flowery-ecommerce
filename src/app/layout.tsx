@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import Layout from '../components/layout/Layout';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const poppins = Poppins({ subsets: ['latin-ext'], weight: ['400', '500', '600', '700', '800', '900'] });
 
 export const metadata: Metadata = {
 	title: 'Flower Delivery',
@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html
 			lang="en"
-			className={inter.className}
+			className={poppins.className}
 		>
 			<body>
 				<Layout>{children}</Layout>
