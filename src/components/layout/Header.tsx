@@ -1,6 +1,11 @@
 import cartIcon from '@/public/assets/icons/cart.svg';
 import close from '@/public/assets/icons/close.svg';
+import facebook from '@/public/assets/icons/facebook.svg';
 import menu from '@/public/assets/icons/ham-menu.svg';
+import instagram from '@/public/assets/icons/instagram.svg';
+import pinterest from '@/public/assets/icons/pinterest.svg';
+import telegram from '@/public/assets/icons/telegram.svg';
+import twitter from '@/public/assets/icons/twitter.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../ui/Button';
@@ -59,7 +64,7 @@ const Header = () => {
 						className=""
 					/>
 				</Button>
-				<div className="absolute inset-0 h-full bg-white border border-black">
+				<div className="absolute inset-0 h-full bg-white border border-black flex flex-col">
 					<Button className="w-max col-end-4 border-y-0 p-4">
 						<Image
 							src={close}
@@ -86,12 +91,7 @@ const Header = () => {
 								</Link>
 							</li>
 							<li className="">
-								<Link
-									href=""
-									className="p-5 border-t border-t-black flex w-full"
-								>
-									Services
-								</Link>
+								<span className="p-5 border-t border-t-black flex w-full">Services</span>
 							</li>
 							<li className="">
 								<Link
@@ -109,28 +109,40 @@ const Header = () => {
 									About us
 								</Link>
 							</li>
-							<li className="">
-								<Link
-									href=""
-									className="w-max p-8"
-								>
-									Shipping & returns
-								</Link>
-								<Link
-									href=""
-									className="w-max p-8"
-								>
-									Terms & condition
-								</Link>
-								<Link
-									href=""
-									className="w-max p-8"
-								>
-									Privacy policy
-								</Link>
+							<li className="p-5 flex flex-col gap-4">
+								<span className="w-full">Shipping & returns</span>
+								<span className="w-full">Terms & condition</span>
+								<span className="w-full">Privacy policy</span>
 							</li>
 						</ul>
 					</nav>
+					<div className="p-5 flex items-center justify-between mt-auto border-y border-y-black">
+						<Image
+							src={instagram}
+							alt=""
+							className=""
+						/>
+						<Image
+							src={pinterest}
+							alt=""
+							className=""
+						/>
+						<Image
+							src={facebook}
+							alt=""
+							className=""
+						/>
+						<Image
+							src={twitter}
+							alt=""
+							className=""
+						/>
+						<Image
+							src={telegram}
+							alt=""
+							className=""
+						/>
+					</div>
 				</div>
 			</div>
 		</header>
