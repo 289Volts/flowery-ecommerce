@@ -33,10 +33,7 @@ const button = tv({
 			className:
 				'lg:hover:border-b lg:hover:border-b-black lg:hover:text-gray active:text-black active:border-b active:border-b-black disabled:cursor-not-allowed disabled:bg-gray-light disabled:text-gray-light capitalize'
 		}
-	],
-	defaultVariants: {
-		variant: 'primary'
-	}
+	]
 });
 
 type ButtonVariants = VariantProps<typeof button>;
@@ -50,7 +47,7 @@ interface ButtonProps extends ButtonVariants {
 interface IButtonProps extends React.ComponentPropsWithRef<'button'> {
 	buttonProps?: ComponentPropsWithoutRef<'button'>;
 }
-const Button: React.FC<ButtonProps> = ({ children, className, buttonProps,  ...props }) => {
+const Button: React.FC<ButtonProps> = ({ children, className, buttonProps, ...props }) => {
 	return (
 		<button
 			{...buttonProps}
