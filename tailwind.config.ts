@@ -97,7 +97,15 @@ module.exports = {
 				mobileHeading3: [
 					'1.6rem',
 					{
-						lineHeight: '120%'
+						lineHeight: '120%',
+						fontWeight: '500'
+					}
+				],
+				mobileHeading5: [
+					'1.12rem',
+					{
+						lineHeight: '120%',
+						fontWeight: '500'
 					}
 				],
 				mobileSubtitle: [
@@ -151,51 +159,13 @@ module.exports = {
 			colors: {
 				extraLight: '#F5F5F7',
 				gray: {
+					DEFAULT: '#808080',
 					light: '#D2D2D7',
-					dark: '#424245',
-					default: '#808080'
+					dark: '#424245'
 				},
 				black: '#121212',
 				success: '#32936F',
-				error: '#F55F56',
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
-				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
-				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
-				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
-				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
-				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
-				},
-				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
-				}
-			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				error: '#F55F56'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -213,5 +183,5 @@ module.exports = {
 			}
 		}
 	},
-	plugins: [require('tailwindcss-animate')]
+	plugins: [require('tailwindcss-animate'), 'prettier-plugin-tailwindcss']
 };

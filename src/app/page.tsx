@@ -1,9 +1,18 @@
-import Image from 'next/image';
+import Button from '@/components/ui/Button';
 
 export default function Home() {
 	return (
 		<main className="">
-			<h1 className="text-desktopHeading1">Hello world</h1>
+			<Button
+				buttonProps={{
+					type: 'submit'
+					// type="submit"
+				}}
+				variant="secondary"
+				className=""
+			>
+				Hello
+			</Button>
 		</main>
 	);
 }
