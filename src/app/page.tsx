@@ -1,18 +1,13 @@
-import Button from '@/components/ui/Button';
+import CardLink from '@/components/shared/CardLink';
 
 export default function Home() {
 	return (
 		<main className="">
-			<Button
-				buttonProps={{
-					type: 'submit'
-					// type="submit"
-				}}
-				variant="secondary"
-				className=""
-			>
-				Hello
-			</Button>
+			<CardLink
+				href="/flowers"
+				linkText="See all flowers"
+				textContent="Flowers"
+			/>
 		</main>
 	);
 }
