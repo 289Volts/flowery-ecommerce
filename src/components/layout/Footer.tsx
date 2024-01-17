@@ -4,6 +4,7 @@ import pinterest from '@/public/assets/icons/pinterest.svg';
 import telegram from '@/public/assets/icons/telegram.svg';
 import twitter from '@/public/assets/icons/twitter.svg';
 import Image from 'next/image';
+import Link from 'next/link';
 import Button from '../ui/Button';
 
 const Footer = () => {
@@ -74,7 +75,50 @@ const Footer = () => {
 				</div>
 			</div>
 
-			<div className=""></div>
+			<div className="px-4 py-10 space-y-4">
+				<div className="space-y-4">
+					<h2 className="text-mobileHeading5 text-gray">Shop</h2>
+					<ul className="space-y-2 text-mobileLink">
+						<li className="">All Products</li>
+						<li className="">Fresh Flowers</li>
+						<li className="">Dried Flowers</li>
+						<li className="">Live Plants</li>
+						<li className="">Designer Vases</li>
+						<li className="">Aroma Candles</li>
+						<li className="">Freshner Diffuser</li>
+					</ul>
+				</div>
+				<div className="space-y-4">
+					<h2 className="text-mobileHeading5 text-gray">Service</h2>
+					<ul className="space-y-2 text-mobileLink">
+						<li className="">Flower Subscription</li>
+						<li className="">Wedding & Event Decor</li>
+					</ul>
+				</div>
+			</div>
+			<div className="px-4 py-10 space-y-4">
+				<div className="space-y-4">
+					<h2 className="text-mobileHeading5 text-gray">About Us</h2>
+					<ul className="space-y-2 text-mobileLink">
+						<li className="">Our Story</li>
+						<li className="">
+							<Link
+								href=""
+								className=""
+							>
+								Blog
+							</Link>
+						</li>
+					</ul>
+				</div>
+				<div className="">
+					<ul className="space-y-2 text-mobileLink">
+						<li className="">Shipping & returns</li>
+						<li className="">Terms & conditions</li>
+						<li className="">Privacy policy</li>
+					</ul>
+				</div>
+			</div>
 		</footer>
 	);
 };
