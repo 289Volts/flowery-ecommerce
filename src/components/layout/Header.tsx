@@ -64,7 +64,7 @@ const Header = () => {
 						className=""
 					/>
 				</Button>
-				<div className="absolute inset-0 h-full bg-white border border-black flex flex-col">
+				<div className="absolute inset-0 h-full bg-white border border-black flex flex-col md:w-1/2 z-[2]">
 					<Button className="w-max col-end-4 border-y-0 p-4">
 						<Image
 							src={close}
@@ -144,6 +144,7 @@ const Header = () => {
 						/>
 					</div>
 				</div>
+				<div className="absolute bg-[rgba(210, 210, 215, 0.35)] backdrop-blur-sm inset-0 hidden md:block z-[1]" />
 			</div>
 		</header>
 	);
