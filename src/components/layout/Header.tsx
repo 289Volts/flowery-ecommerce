@@ -1,3 +1,5 @@
+'use client';
+
 import cartIcon from '@/public/assets/icons/cart.svg';
 import close from '@/public/assets/icons/close.svg';
 import facebook from '@/public/assets/icons/facebook.svg';
@@ -8,9 +10,12 @@ import telegram from '@/public/assets/icons/telegram.svg';
 import twitter from '@/public/assets/icons/twitter.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import Button from '../ui/Button';
 
 const Header = () => {
+	const [open, setOpen] = useState(false);
+	const handleOpenMenu = () => setOpen(!open);
 	return (
 		<header className="">
 			<div className="desktop hidden lg:grid grid-cols-[1fr_1fr] border-y border-y-black">
@@ -45,6 +50,9 @@ const Header = () => {
 			</div>
 			<div className="mobile grid grid-cols-[1fr_1fr] lg:hidden border-y border-y-black ">
 				<Button
+					buttonProps={{
+						onClick: handleOpenMenu
+					}}
 					className="w-max border-y-0 p-4"
 					variant="secondary"
 				>
@@ -64,87 +72,96 @@ const Header = () => {
 						className=""
 					/>
 				</Button>
-				<div className="absolute inset-0 h-full bg-white border border-black flex flex-col md:w-1/2 z-[2]">
-					<Button className="w-max col-end-4 border-y-0 p-4">
-						<Image
-							src={close}
-							alt=""
-							className=""
-						/>
-					</Button>
-					<nav className="">
-						<ul className="flex flex-col">
-							<li className="">
-								<Link
-									href=""
-									className="p-5 border-t border-t-black flex w-full"
-								>
-									Sign in
-								</Link>
-							</li>
-							<li className="">
-								<Link
-									href=""
-									className="p-5 border-t border-t-black flex w-full"
-								>
-									Shop
-								</Link>
-							</li>
-							<li className="">
-								<span className="p-5 border-t border-t-black flex w-full">Services</span>
-							</li>
-							<li className="">
-								<Link
-									href=""
-									className="p-5 border-t border-t-black flex w-full"
-								>
-									Contact
-								</Link>
-							</li>
-							<li className="">
-								<Link
-									href=""
-									className="p-5 border-y border-y-black flex w-full"
-								>
-									About us
-								</Link>
-							</li>
-							<li className="p-5 flex flex-col gap-4">
-								<span className="w-full">Shipping & returns</span>
-								<span className="w-full">Terms & condition</span>
-								<span className="w-full">Privacy policy</span>
-							</li>
-						</ul>
-					</nav>
-					<div className="p-5 flex items-center justify-between mt-auto border-y border-y-black">
-						<Image
-							src={instagram}
-							alt=""
-							className=""
-						/>
-						<Image
-							src={pinterest}
-							alt=""
-							className=""
-						/>
-						<Image
-							src={facebook}
-							alt=""
-							className=""
-						/>
-						<Image
-							src={twitter}
-							alt=""
-							className=""
-						/>
-						<Image
-							src={telegram}
-							alt=""
-							className=""
-						/>
+				<div
+					className={`absolute md:grid-cols-2 inset-0 bg-white border border-black -translate-x-full transition-transform duration-500 grid ${
+						open && 'translate-x-0'
+					}`}
+				>
+					<div className="flex flex-col">
+						<Button className="w-max col-end-4 border-y-0 p-4">
+							<Image
+								src={close}
+								alt=""
+								className=""
+							/>
+						</Button>
+						<nav className="">
+							<ul className="flex flex-col">
+								<li className="">
+									<Link
+										href=""
+										className="p-5 border-t border-t-black flex w-full"
+									>
+										Sign in
+									</Link>
+								</li>
+								<li className="">
+									<Link
+										href=""
+										className="p-5 border-t border-t-black flex w-full"
+									>
+										Shop
+									</Link>
+								</li>
+								<li className="">
+									<span className="p-5 border-t border-t-black flex w-full">Services</span>
+								</li>
+								<li className="">
+									<Link
+										href=""
+										className="p-5 border-t border-t-black flex w-full"
+									>
+										Contact
+									</Link>
+								</li>
+								<li className="">
+									<Link
+										href=""
+										className="p-5 border-y border-y-black flex w-full"
+									>
+										About us
+									</Link>
+								</li>
+								<li className="p-5 flex flex-col gap-4">
+									<span className="w-full">Shipping & returns</span>
+									<span className="w-full">Terms & condition</span>
+									<span className="w-full">Privacy policy</span>
+								</li>
+							</ul>
+						</nav>
+						<div className="p-5 flex items-center justify-between mt-auto border-y border-y-black">
+							<Image
+								src={instagram}
+								alt=""
+								className=""
+							/>
+							<Image
+								src={pinterest}
+								alt=""
+								className=""
+							/>
+							<Image
+								src={facebook}
+								alt=""
+								className=""
+							/>
+							<Image
+								src={twitter}
+								alt=""
+								className=""
+							/>
+							<Image
+								src={telegram}
+								alt=""
+								className=""
+							/>
+						</div>
 					</div>
 				</div>
-				<div className="absolute bg-[rgba(210, 210, 215, 0.35)] backdrop-blur-sm inset-0 hidden md:block z-[1]" />
+				<div
+					onClick={handleOpenMenu}
+					className={`bg-[rgba(210, 210, 215, 0.35)] backdrop-blur-sm inset-0 hidden md:block`}
+				/>
 			</div>
 		</header>
 	);
