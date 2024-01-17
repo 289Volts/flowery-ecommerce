@@ -163,7 +163,7 @@ module.exports = {
 					light: '#D2D2D7',
 					dark: '#424245'
 				},
-				black: '#121212',
+				primary: '#121212',
 				success: '#32936F',
 				error: '#F55F56'
 			},

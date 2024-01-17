@@ -15,20 +15,22 @@ import Button from '../ui/Button';
 
 const Header = () => {
 	const [open, setOpen] = useState(false);
-	const handleOpenMenu = () => setOpen(!open);
+	const handleOpenMenu = () => {
+		setOpen(!open);
+	};
 	return (
 		<header className="">
 			<div className="desktop hidden lg:grid grid-cols-[1fr_1fr] border-y border-y-black">
 				<div className="flex">
 					<Link
 						href=""
-						className="w-max p-8"
+						className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-500 xl:w-[180px] p-7 text-center"
 					>
 						Shop
 					</Link>
 					<Link
 						href=""
-						className="w-max p-8 border-x border-x-black"
+						className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-500 xl:w-[180px] p-7 border-x border-x-black text-center"
 					>
 						Contact
 					</Link>
@@ -36,12 +38,12 @@ const Header = () => {
 				<div className="flex col-end-4">
 					<Link
 						href=""
-						className="w-max p-8 border-x border-x-black"
+						className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-500 xl:w-[180px] p-7 border-x border-x-black text-center"
 					>
 						Sign in
 					</Link>
 					<Button
-						className="w-max border-y-0 p-8 "
+						className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-500 xl:w-[180px] border-y-0 p-7 capitalize border-l-0 justify-center !font-normal"
 						variant="secondary"
 					>
 						Cart
@@ -59,7 +61,7 @@ const Header = () => {
 					variant="secondary"
 				>
 					<Image
-						src={menu}
+						src={menu as string}
 						alt=""
 						className=""
 					/>
@@ -69,7 +71,7 @@ const Header = () => {
 					variant="secondary"
 				>
 					<Image
-						src={cartIcon}
+						src={cartIcon as string}
 						alt=""
 						className=""
 					/>
@@ -88,7 +90,7 @@ const Header = () => {
 							className="w-max col-end-4 border-y-0 p-4"
 						>
 							<Image
-								src={close}
+								src={close as string}
 								alt=""
 								className=""
 							/>
