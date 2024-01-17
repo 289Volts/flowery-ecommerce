@@ -51,7 +51,9 @@ const Header = () => {
 			<div className="mobile grid grid-cols-[1fr_1fr] lg:hidden border-y border-y-black ">
 				<Button
 					buttonProps={{
-						onClick: handleOpenMenu
+						onClick: handleOpenMenu,
+						'aria-expanded': open ? 'true' : 'false',
+						'aria-label': 'open menu'
 					}}
 					className="w-max border-y-0 p-4"
 					variant="secondary"
@@ -73,12 +75,18 @@ const Header = () => {
 					/>
 				</Button>
 				<div
-					className={`absolute md:grid-cols-2 inset-0 bg-white border border-black -translate-x-full transition-transform duration-500 grid ${
-						open && 'translate-x-0'
+					className={`drawer absolute md:grid-cols-2 inset-0  transition-transform duration-500 grid ${
+						!open ? '-translate-x-[110%]' : 'translate-x-0 drawer-open'
 					}`}
 				>
-					<div className="flex flex-col">
-						<Button className="w-max col-end-4 border-y-0 p-4">
+					<div className="flex flex-col bg-white border border-black">
+						<Button
+							buttonProps={{
+								onClick: handleOpenMenu,
+								'aria-label': 'close menu'
+							}}
+							className="w-max col-end-4 border-y-0 p-4"
+						>
 							<Image
 								src={close}
 								alt=""
@@ -89,6 +97,7 @@ const Header = () => {
 							<ul className="flex flex-col">
 								<li className="">
 									<Link
+										onClick={handleOpenMenu}
 										href=""
 										className="p-5 border-t border-t-black flex w-full"
 									>
@@ -97,6 +106,7 @@ const Header = () => {
 								</li>
 								<li className="">
 									<Link
+										onClick={handleOpenMenu}
 										href=""
 										className="p-5 border-t border-t-black flex w-full"
 									>
@@ -104,10 +114,16 @@ const Header = () => {
 									</Link>
 								</li>
 								<li className="">
-									<span className="p-5 border-t border-t-black flex w-full">Services</span>
+									<span
+										onClick={handleOpenMenu}
+										className="p-5 border-t border-t-black flex w-full"
+									>
+										Services
+									</span>
 								</li>
 								<li className="">
 									<Link
+										onClick={handleOpenMenu}
 										href=""
 										className="p-5 border-t border-t-black flex w-full"
 									>
@@ -116,6 +132,7 @@ const Header = () => {
 								</li>
 								<li className="">
 									<Link
+										onClick={handleOpenMenu}
 										href=""
 										className="p-5 border-y border-y-black flex w-full"
 									>
@@ -123,45 +140,65 @@ const Header = () => {
 									</Link>
 								</li>
 								<li className="p-5 flex flex-col gap-4">
-									<span className="w-full">Shipping & returns</span>
-									<span className="w-full">Terms & condition</span>
-									<span className="w-full">Privacy policy</span>
+									<span
+										onClick={handleOpenMenu}
+										className="w-full"
+									>
+										Shipping & returns
+									</span>
+									<span
+										onClick={handleOpenMenu}
+										className="w-full"
+									>
+										Terms & condition
+									</span>
+									<span
+										onClick={handleOpenMenu}
+										className="w-full"
+									>
+										Privacy policy
+									</span>
 								</li>
 							</ul>
 						</nav>
 						<div className="p-5 flex items-center justify-between mt-auto border-y border-y-black">
 							<Image
+								onClick={handleOpenMenu}
 								src={instagram}
-								alt=""
+								alt="instagram"
 								className=""
 							/>
 							<Image
+								onClick={handleOpenMenu}
 								src={pinterest}
-								alt=""
+								alt="pinterest"
 								className=""
 							/>
 							<Image
+								onClick={handleOpenMenu}
 								src={facebook}
-								alt=""
+								alt="facebook"
 								className=""
 							/>
 							<Image
+								onClick={handleOpenMenu}
 								src={twitter}
-								alt=""
+								alt="twitter"
 								className=""
 							/>
 							<Image
+								onClick={handleOpenMenu}
 								src={telegram}
-								alt=""
+								alt="telegram"
 								className=""
 							/>
 						</div>
 					</div>
+					<div
+						onClick={handleOpenMenu}
+						className={`bg-[rgba(210, 210, 215, 0.35)] backdrop-blur-sm hidden md:block`}
+					/>
 				</div>
-				<div
-					onClick={handleOpenMenu}
-					className={`bg-[rgba(210, 210, 215, 0.35)] backdrop-blur-sm inset-0 hidden md:block`}
-				/>
 			</div>
 		</header>
 	);
