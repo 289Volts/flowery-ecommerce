@@ -1,6 +1,17 @@
 import CardLink from '@/components/shared/CardLink';
+import { createClient } from 'contentful';
 
-export default function Home() {
+const Home = async () => {
+	const client = createClient({
+		space: process.env.CONTENTFUL_SPACE_ID ?? '',
+		accessToken: process.env.CONTENTFUL_API_KEY ?? ''
+	});
+
+	const res = await client.getEntries({ content_type: 'home' });
+
+	console.log(res.items[0].fields);
+	// console.log(typeof res.items);
+
 	return (
 		<main className="">
 			<CardLink
@@ -10,4 +21,6 @@ export default function Home() {
 			/>
 		</main>
 	);
-}
+};
+
+export default Home;
