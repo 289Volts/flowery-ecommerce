@@ -44,9 +44,6 @@ interface ButtonProps extends ButtonVariants {
 	buttonProps?: ComponentPropsWithoutRef<'button'>;
 }
 
-interface IButtonProps extends React.ComponentPropsWithRef<'button'> {
-	buttonProps?: ComponentPropsWithoutRef<'button'>;
-}
 const Button: React.FC<ButtonProps> = ({ children, className, buttonProps, ...props }) => {
 	return (
 		<button

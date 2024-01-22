@@ -24,13 +24,13 @@ const Header = () => {
 				<div className="flex">
 					<Link
 						href=""
-						className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-500 xl:w-[180px] p-7 text-center"
+						className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-300 xl:w-[180px] p-7 text-center"
 					>
 						Shop
 					</Link>
 					<Link
 						href=""
-						className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-500 xl:w-[180px] p-7 border-x border-x-black text-center"
+						className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-300 xl:w-[180px] p-7 border-x border-x-black text-center"
 					>
 						Contact
 					</Link>
@@ -38,12 +38,12 @@ const Header = () => {
 				<div className="flex col-end-4">
 					<Link
 						href=""
-						className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-500 xl:w-[180px] p-7 border-x border-x-black text-center"
+						className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-300 xl:w-[180px] p-7 border-x border-x-black text-center"
 					>
 						Sign in
 					</Link>
 					<Button
-						className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-500 xl:w-[180px] border-y-0 p-7 capitalize border-l-0 justify-center !font-normal"
+						className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-300 xl:w-[180px] border-y-0 p-7 capitalize border-l-0 justify-center !font-normal"
 						variant="secondary"
 					>
 						Cart
@@ -166,31 +166,31 @@ const Header = () => {
 						<div className="p-5 flex items-center justify-between mt-auto border-y border-y-black">
 							<Image
 								onClick={handleOpenMenu}
-								src={instagram}
+								src={instagram as string}
 								alt="instagram"
 								className=""
 							/>
 							<Image
 								onClick={handleOpenMenu}
-								src={pinterest}
+								src={pinterest as string}
 								alt="pinterest"
 								className=""
 							/>
 							<Image
 								onClick={handleOpenMenu}
-								src={facebook}
+								src={facebook as string}
 								alt="facebook"
 								className=""
 							/>
 							<Image
 								onClick={handleOpenMenu}
-								src={twitter}
+								src={twitter as string}
 								alt="twitter"
 								className=""
 							/>
 							<Image
 								onClick={handleOpenMenu}
-								src={telegram}
+								src={telegram as strings}
 								alt="telegram"
 								className=""
 							/>
