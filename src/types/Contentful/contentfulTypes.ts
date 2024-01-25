@@ -1,29 +1,29 @@
 import { EntryFieldTypes } from "contentful";
 
-export type HeroSection = {
+export type THeroSection = {
   heading: string;
   subHeading: string;
   extraText: string;
 };
 
-export type HeadingAndParagraph = {
+export type THeadingAndParagraph = {
   heading: string;
   paragraph: string;
 };
 
-export type HeadingAndAuthor = {
+export type THeadingAndAuthor = {
   heading: string;
   author: string;
 };
 
-export type HomeEntrySkeleton = {
+export type THomeEntrySkeleton = {
   contentTypeId: string;
   fields: {
-    heroSection: EntryFieldTypes.Object<HeroSection>;
-    categories: EntryFieldTypes.Object<HeadingAndParagraph>;
-    aboutUs: EntryFieldTypes.Object<HeadingAndParagraph>;
-    whyChooseUs: EntryFieldTypes.Object<HeadingAndParagraph>;
-    subscriptions: EntryFieldTypes.Object<HeadingAndParagraph>;
-    testimonials: EntryFieldTypes.Object<HeadingAndAuthor>;
+    heroSection: EntryFieldTypes.Object<THeroSection>;
+    categories: EntryFieldTypes.Object<THeadingAndParagraph>;
+    aboutUs: EntryFieldTypes.Object<THeadingAndParagraph>;
+    whyChooseUs: EntryFieldTypes.Object<THeadingAndParagraph>;
+    subscriptions: EntryFieldTypes.Object<THeadingAndParagraph>;
+    testimonials: EntryFieldTypes.Object<THeadingAndAuthor>;
   };
 };

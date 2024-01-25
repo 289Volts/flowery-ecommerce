@@ -1,4 +1,4 @@
-import { HomeEntrySkeleton } from "@/types/Contentful/contentfulTypes";
+import { THomeEntrySkeleton } from "@/types/Contentful/contentfulTypes";
 import { createClient } from "contentful";
 
 const client = createClient({
@@ -6,7 +6,7 @@ const client = createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_API_KEY ?? "",
 });
 export const fetchContent = async (contentType: string) => {
-  const res = await client.getEntries<HomeEntrySkeleton>({
+  const res = await client.getEntries<THomeEntrySkeleton>({
     content_type: contentType,
   });
   return res;
