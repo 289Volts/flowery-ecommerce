@@ -14,10 +14,10 @@ const HeroSection = ({ res }: THeroSectionProps) => {
   const categories = res.items[0].fields.categories;
   console.log(categories);
   return (
-    <section className="mx-auto grid w-[90%] py-10 sm:w-auto sm:p-20 lg:grid-cols-[0.5fr_1fr] xl:grid-cols-2">
+    <section className="grid lg:grid-cols-[0.5fr_1fr] xl:grid-cols-2">
       {res.items.map(({ fields: { heroSection } }) => (
         <>
-          <div key={heroSection.heading} className="w-fit">
+          <div key={heroSection.heading} className="w-fit px-4 py-10 sm:p-20">
             <div className="sm:pb-13 space-y-4 pb-6">
               <h1 className="text-mobileHeading1 sm:text-desktopHeading1">
                 {heroSection.heading}
@@ -43,10 +43,14 @@ const HeroSection = ({ res }: THeroSectionProps) => {
         </>
       ))}
       <div className="lg:border-l lg:border-l-primary">
-        {categories.map(({ name, slug }) => (
-          <div key={name} className="">
+        {categories.map(({ name, slug }, i) => (
+          <div key={name} className="grid grid-cols-2">
             <CardLink textContent={name} href={slug} linkText="Shop now" />
-            <Image src={freshFlowersSM} alt="" />
+            <Image
+              src={freshFlowersSM}
+              alt=""
+              className={i % 2 !== 0 ? "row-[1]" : ""}
+            />
           </div>
         ))}
       </div>
