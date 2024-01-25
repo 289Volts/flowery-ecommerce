@@ -1,5 +1,5 @@
 "use client";
-import { mobileImages } from "@/lib/Data/CategoriesImages/data";
+import { mobileImages, tabletImages } from "@/lib/Data/CategoriesImages/data";
 import { heroTextContentImages } from "@/lib/Data/HeroTextContent/data";
 import { THeroSectionProps } from "@/types/Components/HeroSection/types";
 import Image from "next/image";
@@ -49,7 +49,12 @@ const HeroSection = ({ res }: THeroSectionProps) => {
             <Image
               src={mobileImages[i][name]}
               alt=""
-              className={`${i % 2 !== 0 ? "row-[1] border-r border-r-primary" : ""} w-full`}
+              className={`${i % 2 !== 0 ? "row-[1] border-r border-r-primary" : ""} w-full sm:hidden`}
+            />
+            <Image
+              src={tabletImages[i][name]}
+              alt=""
+              className={`${i % 2 !== 0 ? "row-[1] border-r border-r-primary" : ""} hidden w-full sm:block`}
             />
           </div>
         ))}
