@@ -16,11 +16,16 @@ export type THeadingAndAuthor = {
   author: string;
 };
 
+export type TNameAndSlug = {
+  name: string;
+  slug: string;
+}[];
+
 export type THomeEntrySkeleton = {
   contentTypeId: string;
   fields: {
     heroSection: EntryFieldTypes.Object<THeroSection>;
-    categories: EntryFieldTypes.Object<THeadingAndParagraph>;
+    categories: EntryFieldTypes.Object<TNameAndSlug>;
     aboutUs: EntryFieldTypes.Object<THeadingAndParagraph>;
     whyChooseUs: EntryFieldTypes.Object<THeadingAndParagraph>;
     subscriptions: EntryFieldTypes.Object<THeadingAndParagraph>;
