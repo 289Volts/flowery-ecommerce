@@ -1,17 +1,18 @@
-"use client";
 import { mobileImages, tabletImages } from "@/lib/Data/CategoriesImages/data";
 // import { heroTextContentImages } from "@/lib/Data/HeroTextContent/data";
+import { fetchAssets, fetchContent } from "@/lib/Contentful/fetcher";
 import heroImage from "@/public/assets/images/heroImg.svg";
-import { THeroSectionProps } from "@/types/Components/HeroSection/types";
 import Image from "next/image";
 import CardLink from "../shared/CardLink";
 
-const HeroSection = ({ textContent }: THeroSectionProps) => {
-  const categories = textContent[0].fields.categories;
-  //   console.log(categories);
+const HeroSection = async () => {
+  const textContent = await fetchContent("home");
+  const assets = await fetchAssets();
+  const categories = textContent.items[0].fields.categories;
+  console.log(assets);
   return (
     <section className="grid lg:grid-cols-[0.5fr_1fr] xl:grid-cols-2">
-      {textContent.map(({ fields: { heroSection } }) => (
+      {textContent.items.map(({ fields: { heroSection } }) => (
         <div key={heroSection.heading} className="w-fit px-4 py-10 sm:p-20">
           <div className="sm:pb-13 space-y-4 pb-6">
             <h1 className="text-mobileHeading1 sm:text-desktopHeading1">
