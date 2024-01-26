@@ -45,12 +45,10 @@ body:has(.mobile button[aria-expanded='true']) {
 		--ring: 240 10% 3.9%;
 
 		--radius: 0.5rem;
-
-		.text-pretty {
-			text-wrap: pretty;
-		}
 	}
-
+	.text-pretty {
+		text-wrap: pretty;
+	}
 	.dark {
 		--background: 240 10% 3.9%;
 		--foreground: 0 0% 98%;

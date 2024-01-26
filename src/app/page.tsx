@@ -1,18 +1,13 @@
-import Button from '@/components/ui/Button';
+import HeroSection from "@/components/Home/HeroSection";
 
-export default function Home() {
-	return (
-		<main className="">
-			<Button
-				buttonProps={{
-					type: 'submit'
-					// type="submit"
-				}}
-				variant="secondary"
-				className=""
-			>
-				Hello
-			</Button>
-		</main>
-	);
-}
+// import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+
+const Home = () => {
+  return (
+    <>
+      <HeroSection />
+    </>
+  );
+};
+
+export default Home;
