@@ -11,3 +11,7 @@ export const fetchContent = async (contentType: string) => {
   });
   return res;
 };
+export const fetchAssets = async (assetId: string = "") => {
+  const res = await client.getAssets(assetId ? assetId : "");
+  return res;
+};

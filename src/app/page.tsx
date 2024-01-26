@@ -1,14 +1,17 @@
 import HeroSection from "@/components/Home/HeroSection";
-import { fetchContent } from "@/lib/Contentful/fetcher";
+import { fetchAssets, fetchContent } from "@/lib/Contentful/fetcher";
 
 // import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
 const Home = async () => {
-  const res = await fetchContent("home");
-  //   console.log(res.items);
+  const textContent = await fetchContent("home");
+  const assets = await fetchAssets();
+
+  console.log(assets.items[0].fields.file?.url);
+  //   console.log(textContent.items);
   return (
     <>
-      <HeroSection res={res} />
+      <HeroSection assets={assets} textContent={textContent.items} />
 
       {/* <CardLink
 				href="/flowers"

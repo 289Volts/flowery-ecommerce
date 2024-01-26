@@ -1,16 +1,17 @@
 "use client";
 import { mobileImages, tabletImages } from "@/lib/Data/CategoriesImages/data";
-import { heroTextContentImages } from "@/lib/Data/HeroTextContent/data";
+// import { heroTextContentImages } from "@/lib/Data/HeroTextContent/data";
+import heroImage from "@/public/assets/images/heroImg.svg";
 import { THeroSectionProps } from "@/types/Components/HeroSection/types";
 import Image from "next/image";
 import CardLink from "../shared/CardLink";
 
-const HeroSection = ({ res }: THeroSectionProps) => {
-  const categories = res.items[0].fields.categories;
-  console.log(categories);
+const HeroSection = ({ textContent }: THeroSectionProps) => {
+  const categories = textContent[0].fields.categories;
+  //   console.log(categories);
   return (
     <section className="grid lg:grid-cols-[0.5fr_1fr] xl:grid-cols-2">
-      {res.items.map(({ fields: { heroSection } }) => (
+      {textContent.map(({ fields: { heroSection } }) => (
         <div key={heroSection.heading} className="w-fit px-4 py-10 sm:p-20">
           <div className="sm:pb-13 space-y-4 pb-6">
             <h1 className="text-mobileHeading1 sm:text-desktopHeading1">
@@ -24,14 +25,15 @@ const HeroSection = ({ res }: THeroSectionProps) => {
             </p>
           </div>
           <div className="grid grid-cols-[1fr_1px_1fr] gap-x-4 border-t border-t-black pt-4 sm:gap-x-6 sm:pt-6">
-            {heroTextContentImages.map((image, i) => (
+            {/* {heroTextContentImages.map((image, i) => (
               <Image
                 key={i}
                 src={image}
                 alt=""
                 className={`w-full ${i === 0 ? "sm:hidden" : i === 1 ? "hidden sm:block lg:hidden" : "hidden lg:block"}`}
               />
-            ))}
+            ))} */}
+            <Image src={heroImage as string} alt="" className="w-full" />
             <div className="h-full w-full bg-black" />
             <p className="text-pretty self-end text-xs sm:text-sm">
               {heroSection.extraText}

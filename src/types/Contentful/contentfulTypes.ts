@@ -21,6 +21,19 @@ export type TNameAndSlug = {
   slug: string;
 }[];
 
+export type TAssetsFile = {
+  fileName: string;
+  contentType: string;
+  details: {
+    image: {
+      width: number;
+      height: number;
+    };
+    size: number;
+  };
+  url: string;
+};
+
 export type THomeEntrySkeleton = {
   contentTypeId: string;
   fields: {
@@ -32,3 +45,27 @@ export type THomeEntrySkeleton = {
     testimonials: EntryFieldTypes.Object<THeadingAndAuthor>;
   };
 };
+
+// export type TAssetsEntrySkeleton = {
+//   fields: {
+//     file: AssetCollection;
+//   };
+// };
+
+// export type TAssetsEntrySkeleton = {
+//   fields: {
+//     title: string;
+//     file: {
+//       fileName: "quwowooybuqbl6ntboz3.jpg";
+//       contentType: "image/jpg";
+//       details: {
+//         image: {
+//           width: 600;
+//           height: 446;
+//         };
+//         size: 27187;
+//       };
+//       url: "//images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg";
+//     };
+//   };
+// };
