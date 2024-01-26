@@ -1,68 +1,107 @@
-import { mobileImages, tabletImages } from "@/lib/Data/CategoriesImages/data";
+// "use client";
 // import { heroTextContentImages } from "@/lib/Data/HeroTextContent/data";
 import { fetchAssets, fetchContent } from "@/lib/Contentful/fetcher";
-import heroImage from "@/public/assets/images/heroImg.svg";
+// import { useQuery } from "@tanstack/react-query";
+// import { Asset, AssetCollection } from "contentful";
 import Image from "next/image";
 import CardLink from "../shared/CardLink";
 
 const HeroSection = async () => {
   const textContent = await fetchContent("home");
-  const assets = await fetchAssets();
+  const heroImage = await fetchAssets("33Y773KpU5oZKZeDKNS4E5");
+  const categoriesImg = await fetchAssets();
+  // const textContent = useQuery({
+  //   queryKey: ["textContent"],
+  //   queryFn: async () => {
+  //     const res = await fetchContent("home");
+  //     return res;
+  //   },
+  // });
+
+  // const heroImage = useQuery({
+  //   queryKey: ["heroImage"],
+  //   queryFn: async () => {
+  //     const res = await fetchAssets("33Y773KpU5oZKZeDKNS4E5");
+  //     return res;
+  //   },
+  // });
+  // const categoriesImg = useQuery({
+  //   queryKey: ["categoriesImage"],
+  //   queryFn: async () => {
+  //     const res = await fetchAssets();
+  //     return res;
+  //   },
+  // });
+
+  // if (textContent.isPending || heroImage.isPending || categoriesImg.isPending)
+  //   return <p>Loading...</p>;
+
   const categories = textContent.items[0].fields.categories;
-  console.log(assets);
+  console.log("reverse ", categoriesImg.items.slice().reverse());
+  console.log("normal ", categoriesImg.items);
+
   return (
     <section className="grid lg:grid-cols-[0.5fr_1fr] xl:grid-cols-2">
-      {textContent.items.map(({ fields: { heroSection } }) => (
-        <div key={heroSection.heading} className="w-fit px-4 py-10 sm:p-20">
-          <div className="sm:pb-13 space-y-4 pb-6">
-            <h1 className="text-mobileHeading1 sm:text-desktopHeading1">
-              {heroSection.heading}
-              <sup className="-top-[0.2rem] text-mobileHeading1 !font-normal sm:text-desktopHeading1">
-                &reg;
-              </sup>
-            </h1>
-            <p className="text-pretty text-mobileCaption !font-normal sm:text-desktopSubtitle">
-              {heroSection.subHeading}
-            </p>
-          </div>
-          <div className="grid grid-cols-[1fr_1px_1fr] gap-x-4 border-t border-t-black pt-4 sm:gap-x-6 sm:pt-6">
-            {/* {heroTextContentImages.map((image, i) => (
-              <Image
-                key={i}
-                src={image}
-                alt=""
-                className={`w-full ${i === 0 ? "sm:hidden" : i === 1 ? "hidden sm:block lg:hidden" : "hidden lg:block"}`}
-              />
-            ))} */}
-            <Image src={heroImage as string} alt="" className="w-full" />
-            <div className="h-full w-full bg-black" />
-            <p className="text-pretty self-end text-xs sm:text-sm">
-              {heroSection.extraText}
-            </p>
-          </div>
-        </div>
-      ))}
-      <div className="border-y border-y-primary lg:border-l lg:border-l-primary">
-        {categories.map(({ name, slug }, i) => (
+      {
+        // textContent.isSuccess &&
+        textContent.items.map(({ fields: { heroSection } }) => (
           <div
-            key={name}
-            className={`grid grid-cols-2 ${i !== 0 ? "border-t-2 border-t-primary" : ""}`}
+            key={heroSection.heading}
+            className="w-fit px-4 py-10 sm:p-20 lg:p-10 xl:p-20 "
           >
-            <CardLink textContent={name} href={slug} linkText="Shop now" />
-            <Image
-              src={mobileImages[i][name]}
-              alt=""
-              className={`${i % 2 !== 0 ? "row-[1] border-r border-r-primary" : ""} w-full sm:hidden`}
-            />
-            <Image
-              src={tabletImages[i][name]}
-              alt=""
-              className={`${i % 2 !== 0 ? "row-[1] border-r border-r-primary" : ""} hidden w-full sm:block`}
-            />
+            <div className="sm:pb-13 space-y-4 pb-6">
+              <h1 className="text-mobileHeading1 sm:text-desktopHeading1">
+                {heroSection.heading}
+                <sup className="-top-[0.2rem] text-mobileHeading1 !font-normal sm:text-desktopHeading1">
+                  &reg;
+                </sup>
+              </h1>
+              <p className="text-pretty text-mobileCaption !font-normal sm:text-desktopSubtitle">
+                {heroSection.subHeading}
+              </p>
+            </div>
+            <div className="grid grid-cols-[1fr_1px_1fr] gap-x-4 border-t border-t-black pt-4 sm:gap-x-6 sm:pt-6">
+              <Image
+                src={`https:${heroImage.fields.file.url}`}
+                width={heroImage.fields.file.details.image.width}
+                height={heroImage.fields.file.details.image.height}
+                alt=""
+                className="w-full"
+              />
+              <div className="h-full w-full bg-black" />
+              <p className="text-pretty self-end text-xs sm:text-sm">
+                {heroSection.extraText}
+              </p>
+            </div>
           </div>
-        ))}
+        ))
+      }
+      <div className="border-y border-y-primary lg:border-l lg:border-l-primary">
+        {categories.map(({ name, slug }, i) => {
+          const reversedArr = categoriesImg.items.slice().reverse();
+          return (
+            <div
+              className={`grid grid-cols-2 ${i !== 0 ? "border-t-2 border-t-primary" : ""}`}
+            >
+              <Image
+                src={reversedArr[i + 1].fields.file.url}
+                alt=""
+                className={`h-full w-full object-cover ${i % 2 !== 0 ? "row-[1] col-[1] border-r border-r-primary" : "row-[1] col-[2] border-l border-l-primary"}`}
+                width={reversedArr[i].fields.file.details.image.width}
+                height={reversedArr[i].fields.file.details.image.height}
+              />
+              <CardLink
+                key={name}
+                textContent={name}
+                href={slug}
+                linkText="Shop now"
+              />
+            </div>
+          );
+        })}
       </div>
     </section>
+    // <p className="">Hello</p>
   );
 };
 

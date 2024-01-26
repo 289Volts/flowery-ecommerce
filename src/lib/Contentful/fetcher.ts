@@ -12,6 +12,11 @@ export const fetchContent = async (contentType: string) => {
   return res;
 };
 export const fetchAssets = async (assetId: string = "") => {
-  const res = await client.getAssets(assetId ? assetId : "");
+  let res;
+  if (assetId) {
+    res = await client.getAsset(assetId);
+  } else {
+    res = await client.getAssets();
+  }
   return res;
 };

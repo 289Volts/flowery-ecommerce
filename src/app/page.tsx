@@ -6,12 +6,6 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-
-      {/* <CardLink
-				href="/flowers"
-				linkText="See all flowers"
-				textContent="Flowers"
-			/> */}
     </>
   );
 };
