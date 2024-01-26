@@ -1,8 +1,7 @@
+/* eslint-disable */
 // "use client";
-// import { heroTextContentImages } from "@/lib/Data/HeroTextContent/data";
 import { fetchAssets, fetchContent } from "@/lib/Contentful/fetcher";
 // import { useQuery } from "@tanstack/react-query";
-// import { Asset, AssetCollection } from "contentful";
 import Image from "next/image";
 import CardLink from "../shared/CardLink";
 
@@ -37,8 +36,6 @@ const HeroSection = async () => {
   //   return <p>Loading...</p>;
 
   const categories = textContent.items[0].fields.categories;
-  console.log("reverse ", categoriesImg.items.slice().reverse());
-  console.log("normal ", categoriesImg.items);
 
   return (
     <section className="grid lg:grid-cols-[0.5fr_1fr] xl:grid-cols-2">
@@ -81,6 +78,7 @@ const HeroSection = async () => {
           const reversedArr = categoriesImg.items.slice().reverse();
           return (
             <div
+              key={name}
               className={`grid grid-cols-2 ${i !== 0 ? "border-t-2 border-t-primary" : ""}`}
             >
               <Image

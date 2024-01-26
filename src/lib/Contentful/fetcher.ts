@@ -1,5 +1,5 @@
 import { THomeEntrySkeleton } from "@/types/Contentful/contentfulTypes";
-import { createClient } from "contentful";
+import { Asset, AssetCollection, createClient } from "contentful";
 
 const client = createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID ?? "",
@@ -14,9 +14,9 @@ export const fetchContent = async (contentType: string) => {
 export const fetchAssets = async (assetId: string = "") => {
   let res;
   if (assetId) {
-    res = await client.getAsset(assetId);
+    res = (await client.getAsset(assetId)) as Asset;
   } else {
-    res = await client.getAssets();
+    res = (await client.getAssets()) as AssetCollection;
   }
   return res;
 };
