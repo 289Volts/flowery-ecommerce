@@ -1,4 +1,4 @@
-import HeroSection from "@/components/Home/HeroSection";
+import HeroSection from "@/components/Home/HeroSection.jsx";
 
 // import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
