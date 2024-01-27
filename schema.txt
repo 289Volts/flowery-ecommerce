@@ -1,0 +1,62 @@
+import { type SchemaTypeDefinition } from "sanity";
+
+export const schema: { types: SchemaTypeDefinition[] } = {
+  types: [
+    {
+      name: "heroSection",
+      type: "document",
+      title: "Home Page",
+      fields: [
+        {},
+        {
+          name: "hero-heading",
+          type: "string",
+          title: "hero heading",
+        },
+        {
+          name: "hero-subHeading",
+          type: "string",
+          title: "hero sub-heading",
+        },
+        {
+          name: "hero-extraText",
+          type: "string",
+          title: "hero extra Text",
+        },
+        {
+          name: "hero-image",
+          type: "image",
+          title: "hero image",
+        },
+        {
+          title: "Categories",
+          name: "categories",
+          type: "array",
+          of: [{ type: "reference", to: [{ type: "category" }] }],
+        },
+      ],
+    },
+    {
+      name: "category",
+      type: "document",
+      title: "Category",
+      fields: [
+        {
+          name: "title",
+          type: "string",
+          title: "Title",
+        },
+        {
+          name: "slug",
+          title: "Slug",
+          type: "slug",
+        },
+        {
+          name: "image",
+          type: "image",
+          title: "Image",
+        },
+      ],
+    },
+  ],
+};

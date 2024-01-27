@@ -1,10 +1,8 @@
-import { THomeEntrySkeleton } from "@/types/Contentful/contentfulTypes";
-import { AssetCollection, Entry } from "contentful";
+import { THeroSection } from "@/types/Sanity/sanity.type";
 import { StaticImageData } from "next/image";
 
 export type THeroSectionProps = {
-  textContent: Entry<THomeEntrySkeleton, undefined>[];
-  assets: AssetCollection<undefined>;
+  data: THeroSection;
 };
 
 export type TImages = { [key: string]: StaticImageData }[];
