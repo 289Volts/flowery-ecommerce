@@ -8,14 +8,9 @@ import { client } from "@/utils/sanityClient";
 const Home = async () => {
   const content = await client.fetch<THomeQueryResult>(`*[_type == "home"]{
   heroSection {
-    heroHeading,
-    heroSubHeading,
-    heroExtraText,
-    heroImage,
-    categories[]->{  // This part expands the reference to get data from the 'category' type
-      title,
-      slug,
-      image
+    ...,
+    categories[]->{  
+      ...
     }
   }
 }`);
