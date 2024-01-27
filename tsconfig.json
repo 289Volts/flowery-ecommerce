@@ -30,9 +30,10 @@
     ".next/types/**/*.ts",
     ".eslintrc.cjs",
     ".prettier.config.js",
-    "src/components/Home/HeroSection.jsx",
+    "src/components/Home/HeroSection.tsx",
     "src/schema.tss",
     "src/sanity.config.tss",
+    "src/utils/Sanity/imageBuilder.js",
   ],
   "exclude": ["node_modules"],
 }

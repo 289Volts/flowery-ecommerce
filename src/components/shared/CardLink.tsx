@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
 import arrRight from "@/public/assets/icons/arrRight.svg";
+import { cn } from "@/utils/cnUtil";
 import Image from "next/image";
 import Link from "next/link";
 
