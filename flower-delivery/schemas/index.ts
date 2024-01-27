@@ -37,6 +37,84 @@ export const schemaTypes = [
           },
         ],
       },
+      {
+        name: 'about',
+        type: 'object',
+        title: 'About',
+        fields: [
+          {
+            name: 'heading',
+            type: 'string',
+            title: 'Heading',
+          },
+          {
+            name: 'paragraph',
+            type: 'text',
+            title: 'Paragraph',
+          },
+        ],
+      },
+      {
+        name: 'whyUs',
+        type: 'array',
+        title: 'Why choose us',
+        of: [
+          {
+            type: 'object',
+            fields: [
+              {
+                name: 'heading',
+                type: 'string',
+                title: 'Heading',
+              },
+              {
+                name: 'paragraph',
+                type: 'text',
+                title: 'Paragraph',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'subscriptions',
+        type: 'object',
+        title: 'Subscriptions',
+        fields: [
+          {
+            name: 'heading',
+            type: 'string',
+            title: 'Heading',
+          },
+          {
+            name: 'paragraph',
+            type: 'text',
+            title: 'Paragraph',
+          },
+        ],
+      },
+      {
+        name: 'testimonials',
+        type: 'array',
+        title: 'Testimonials',
+        of: [
+          {
+            type: 'object',
+            fields: [
+              {
+                name: 'author',
+                type: 'string',
+                title: 'Author',
+              },
+              {
+                name: 'paragraph',
+                type: 'text',
+                title: 'Paragraph',
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
   {
