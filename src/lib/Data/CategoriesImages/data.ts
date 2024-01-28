@@ -7,7 +7,7 @@ import freshnerMD from "@/public/assets/images/Home/HeroSection/Categories/Fresh
 import freshnerSM from "@/public/assets/images/Home/HeroSection/Categories/Freshners/freshnerSM.png";
 import livePlantMD from "@/public/assets/images/Home/HeroSection/Categories/Live Plants/livePlantMD.png";
 import livePlantSM from "@/public/assets/images/Home/HeroSection/Categories/Live Plants/livePlantSM.png";
-import { TImages } from "@/types/Components/HeroSection/types";
+import { TImages } from "@/types/Components/HeroSection/hero.types";
 
 export const mobileImages: TImages = [
   { "fresh flowers": freshFlowersSM },
