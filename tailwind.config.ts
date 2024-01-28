@@ -163,6 +163,7 @@ module.exports = {
         ],
       },
       colors: {
+        offWhite: "#F1F3F6",
         extraLight: "#F5F5F7",
         gray: {
           DEFAULT: "#808080",

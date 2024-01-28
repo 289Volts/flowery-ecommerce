@@ -7,7 +7,8 @@ import { client } from "@/utils/sanityClient";
 
 const Home = async () => {
   const content = await client.fetch<THomeQueryResult>(`*[_type == "home"]{
-  heroSection {
+    ...,
+    heroSection {
     ...,
     categories[]->{  
       ...
@@ -19,7 +20,7 @@ const Home = async () => {
   return (
     <>
       <HeroSection data={content[0].heroSection} />
-      <AboutSection />
+      <AboutSection data={content[0].about} />
     </>
   );
 };

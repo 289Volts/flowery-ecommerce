@@ -24,8 +24,14 @@ export type THeroSection = {
   categories: Category[];
 };
 
+export type TAboutSection = {
+  heading: string;
+  paragraph: string;
+};
+
 type HomeContent = {
   heroSection: THeroSection;
+  about: TAboutSection;
 };
 
 export type THomeQueryResult = HomeContent[];
