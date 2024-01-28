@@ -177,6 +177,12 @@ module.exports = {
       padding: {
         13: "3.375rem",
       },
+      transitionProperty: {
+        dimension: "height, width",
+      },
+      transitionDuration: {
+        "400": "400ms",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
