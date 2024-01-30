@@ -1,5 +1,6 @@
 import AboutSection from "@/components/Home/AboutSection";
 import HeroSection from "@/components/Home/HeroSection";
+import WhyUs from "@/components/Home/WhyUs";
 import { THomeQueryResult } from "@/types/Sanity/sanity.type";
 import { client } from "@/utils/sanityClient";
 
@@ -21,6 +22,7 @@ const Home = async () => {
     <>
       <HeroSection data={content[0].heroSection} />
       <AboutSection data={content[0].about} />
+      <WhyUs data={content[0].whyUs} />
     </>
   );
 };
