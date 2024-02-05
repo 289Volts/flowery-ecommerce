@@ -176,6 +176,8 @@ module.exports = {
       },
       padding: {
         13: "3.375rem",
+        15: "3.75rem",
+        29: "7.313rem",
       },
       transitionProperty: {
         dimension: "height, width",

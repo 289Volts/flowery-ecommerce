@@ -4,7 +4,7 @@ import SectionHeading from "../shared/SectionHeading";
 const WhyUs = ({ data }: TWhyUsSectionProps) => {
   // console.log(data);
   return (
-    <section className="grid lg:grid-cols-2 text-primary">
+    <section className="grid lg:grid-cols-2 text-primary border-b border-b-primary">
       <SectionHeading heading="why us" />
       <div className="lg:border-l-primary lg:border-l">
         {data.map(({ heading, paragraph }, i) => (
