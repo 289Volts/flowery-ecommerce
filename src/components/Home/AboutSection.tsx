@@ -1,15 +1,12 @@
-import { TAboutSectionProps } from "@/types/Components/AboutSection/about.types";
+import { TAboutSectionProps } from "@/types/Components/Views/views.types";
+import SectionHeading from "../shared/SectionHeading";
 import Action from "../ui/Action";
 
 const AboutSection = ({ data }: TAboutSectionProps) => {
   return (
-    <section className="grid lg:grid-cols-2 text-primary">
-      <div className="py-10 px-4 sm:p-20">
-        <h2 className="text-mobileHeading2 uppercase sm:text-desktopHeading2">
-          about us
-        </h2>
-      </div>
-      <div className="py-10 px-4 sm:p-20 space-y-16 border-t border-t-primary">
+    <section className="grid lg:grid-cols-2 text-primary border-y border-y-primary">
+      <SectionHeading heading="about us" />
+      <div className="py-10 px-4 sm:p-20 lg:p-10 xl:p-20 space-y-16 border-t border-t-primary lg:border-t-0 lg:border-l-primary lg:border-l">
         <div className="">
           <h4 className="uppercase text-mobileOverline mb-6">our story</h4>
           <h3 className="text-mobileHeading3 mb-4 sm:text-desktopHeading3">

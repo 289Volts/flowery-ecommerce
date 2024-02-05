@@ -19,7 +19,7 @@ const Header = () => {
     setOpen(!open);
   };
   return (
-    <header className="bg-white sticky top-0">
+    <header className="bg-white sticky top-0 z-10">
       <div className="desktop hidden lg:grid grid-cols-[1fr_1fr] border-y border-y-black">
         <div className="flex">
           <Link

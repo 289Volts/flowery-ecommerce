@@ -1,7 +1,8 @@
 /* eslint-disable */
 // "use client";
 // import { useQuery } from "@tanstack/react-query";
-import { THeroSectionProps } from "@/types/Components/HeroSection/hero.types";
+
+import { THeroSectionProps } from "@/types/Components/Views/views.types";
 import { urlFor } from "@/utils/Sanity/imageBuilder";
 import Image from "next/image";
 import CardLink from "../shared/CardLink";
@@ -11,8 +12,8 @@ const HeroSection = async ({ data }: THeroSectionProps) => {
   const heroImg = heroImgOpt.url();
 
   return (
-    <section className="grid lg:grid-cols-[0.5fr_1fr] xl:grid-cols-2 lg:border-b-2 lg:border-b-primary">
-      <div className="w-fit px-4 py-10 sm:p-20 lg:p-10 xl:p-20 ">
+    <section className="grid xl:grid-cols-2">
+      <div className="w-fit px-4 py-10 sm:p-20 lg:p10 lg:p-8 xl:p-20">
         <div className="sm:pb-13 space-y-4 pb-6">
           <h1 className="text-mobileHeading1 sm:text-desktopHeading1">
             {data.heroHeading}
@@ -38,7 +39,7 @@ const HeroSection = async ({ data }: THeroSectionProps) => {
           </p>
         </div>
       </div>
-      <div className="border-y-2 border-y-primary lg:border-l lg:border-l-primary lg:border-y-0">
+      <div className="border-t border-t-primary xl:border-l xl:border-l-primary xl:border-y-0 lg:grid">
         {data.categories.map(
           (
             {
@@ -57,14 +58,18 @@ const HeroSection = async ({ data }: THeroSectionProps) => {
                 key={title}
                 className={`grid grid-cols-2 ${i !== 0 ? "border-t-2 border-t-primary" : ""}`}
               >
-                <Image
-                  src={categoryImg}
-                  alt=""
-                  className={`h-full w-full object-cover ${i % 2 !== 0 ? "row-[1] col-[1] border-r-2 border-r-primary" : "row-[1] col-[2] border-l border-l-primary"}`}
-                  width={categoryImgOpt.width(360).options.width}
-                  height={categoryImgOpt.height(360).options.height}
-                  priority={i === 0}
-                />
+                <div
+                  className={`min-w-[120px] min-h-[200px] group overflow-hidden ${i % 2 !== 0 ? "row-[1] col-[1] border-r-2 border-r-primary" : "row-[1] col-[2] border-l border-l-primary"}`}
+                >
+                  <Image
+                    src={categoryImg}
+                    alt=""
+                    className={`h-full w-full lg:hover:scale-110 transition-transform duration-400 object-cover`}
+                    width={categoryImgOpt.width(360).options.width}
+                    height={categoryImgOpt.height(360).options.height}
+                    priority={i === 0}
+                  />
+                </div>
                 <CardLink
                   key={title}
                   textContent={title}

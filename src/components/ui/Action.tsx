@@ -4,7 +4,7 @@ import React, { ComponentPropsWithoutRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const button = tv({
-  base: "md:focus-visible:outline-2 md:focus-visible:outline-dotted md:focus-visible:outline-offset-[2px] text-mobileButton md:text-desktopButton hover:transition hover:duration-500",
+  base: "md:focus-visible:outline-2 md:focus-visible:outline-dotted md:focus-visible:outline-offset-[2px] text-mobileButton md:text-desktopButton hover:transition-colors hover:duration-400",
   variants: {
     variant: {
       primary:

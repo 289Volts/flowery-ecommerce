@@ -5,7 +5,7 @@ import telegram from "@/public/assets/icons/telegram.svg";
 import twitter from "@/public/assets/icons/twitter.svg";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../ui/Action";
+import Action from "../ui/Action";
 
 const Footer = () => {
   return (
@@ -23,9 +23,9 @@ const Footer = () => {
           id=""
           className="px-4 py-2 h-[48px] border border-gray-light bg-white placeholder:text-gray-dark placeholder:text-sm w-full md:mt-6"
         />
-        <Button variant="primary" className="w-full justify-center ">
+        <Action variant="primary" className="w-full justify-center ">
           REMIND
-        </Button>
+        </Action>
       </div>
       <div className="px-4 py-10 md:px-10 space-y-4 md:space-y-6 md:!border-t-0">
         <h2 className="text-mobileHeading5 text-gray-dark md:text-desktopSubtitle">

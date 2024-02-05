@@ -23,11 +23,14 @@ const CardLink = ({
         className,
       )}
     >
-      <span className="my-auto text-mobileHeading3 capitalize md:text-desktopHeading3">
+      <span className="my-auto text-mobileHeading3 capitalize md:text-desktopHeading3 lg:text-mobileHeading3 xl:text-desktopHeading3">
         {textContent}
       </span>
-      <div className="flex items-center gap-1 text-sm font-semibold leading-[120%] md:text-base group-focus-visible:underline group-focus-visible:underline-offset-4">
-        <span className="">{linkText}</span>
+      <div
+        className="h-6 flex items-start gap-1 text-sm font-semibold leading-[120%] md:text-base relative before:w-0 before:block before:absolute before:bg-primary before:h-0.5 -z-[1] before:bottom-0 lg:group-focus-visible:before:w-full lg:group-hover:before:w-full before:transition-dimension before:duration-400 origin-left
+      "
+      >
+        <span className=" ">{linkText}</span>
         <Image src={arrRight as string} alt="" className="" />
       </div>
     </Link>
