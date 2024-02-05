@@ -31,11 +31,22 @@ export type THeroSection = {
 
 export type TAboutSection = THeadingAndParagraph;
 export type TWhyUs = THeadingAndParagraph[];
+export type TServices = Array<
+  THeadingAndParagraph & {
+    image: {
+      asset: {
+        _ref: string;
+        url: string;
+      };
+    };
+  }
+>;
 
 type HomeContent = {
   heroSection: THeroSection;
   about: TAboutSection;
   whyUs: TWhyUs;
+  services: TServices;
 };
 
 export type THomeQueryResult = HomeContent[];

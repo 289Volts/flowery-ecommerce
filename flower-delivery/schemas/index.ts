@@ -77,24 +77,29 @@ export const schemaTypes = [
         ],
       },
       {
-        name: 'subscriptions',
-        type: 'object',
-        title: 'Subscriptions',
-        fields: [
+        name: 'services',
+        type: 'array',
+        title: 'Services',
+        of: [
           {
-            name: 'heading',
-            type: 'string',
-            title: 'Heading',
-          },
-          {
-            name: 'paragraph',
-            type: 'text',
-            title: 'Paragraph',
-          },
-          {
-            name: 'image',
-            type: 'image',
-            title: 'Image',
+            type: 'object',
+            fields: [
+              {
+                name: 'heading',
+                type: 'string',
+                title: 'Heading',
+              },
+              {
+                name: 'paragraph',
+                type: 'text',
+                title: 'Paragraph',
+              },
+              {
+                name: 'image',
+                type: 'image',
+                title: 'Image',
+              },
+            ],
           },
         ],
       },

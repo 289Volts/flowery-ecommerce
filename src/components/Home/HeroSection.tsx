@@ -7,7 +7,7 @@ import { urlFor } from "@/utils/Sanity/imageBuilder";
 import Image from "next/image";
 import CardLink from "../shared/CardLink";
 
-const HeroSection = async ({ data }: THeroSectionProps) => {
+const HeroSection = ({ data }: THeroSectionProps) => {
   const heroImgOpt = urlFor(data.heroImage);
   const heroImg = heroImgOpt.url();
 

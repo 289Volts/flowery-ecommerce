@@ -12,7 +12,7 @@ const button = tv({
       secondary:
         "bg-white text-primary border border-black py-4 px-6 flex gap-2 items-center uppercase",
       tertiary:
-        "bg-primary border-white text-white border py-4 px-6 flex gap-2 items-center uppercase",
+        "bg-transparent border-white text-white border py-4 px-6 flex gap-2 items-center uppercase",
       textIcon: "flex items-center gap-2",
     },
   },

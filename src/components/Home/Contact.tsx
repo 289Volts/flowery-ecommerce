@@ -12,7 +12,7 @@ import Action from "../ui/Action";
 const Contact = () => {
   return (
     <section className="grid lg:grid-cols-2 text-primary border-b border-b-primary mb-6">
-      <div className="relative mb-10 sm:mb-0 lg:col-[2] lg:row-[1]">
+      <div className="relative mb-10 sm:mb-0 lg:col-[2] lg:row-[1] max-h-[900px]">
         <Image
           src={contactImg as string}
           alt=""
