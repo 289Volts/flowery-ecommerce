@@ -13,7 +13,7 @@ const HeroSection = async ({ data }: THeroSectionProps) => {
 
   return (
     <section className="grid xl:grid-cols-2">
-      <div className="w-fit px-4 py-10 sm:p-20 lg:p10 lg:p-8 xl:p-20 ">
+      <div className="w-fit px-4 py-10 sm:p-20 lg:p10 lg:p-8 xl:p-20">
         <div className="sm:pb-13 space-y-4 pb-6">
           <h1 className="text-mobileHeading1 sm:text-desktopHeading1">
             {data.heroHeading}

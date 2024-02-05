@@ -91,6 +91,11 @@ export const schemaTypes = [
             type: 'text',
             title: 'Paragraph',
           },
+          {
+            name: 'image',
+            type: 'image',
+            title: 'Image',
+          },
         ],
       },
       {
