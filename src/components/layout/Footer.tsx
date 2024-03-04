@@ -5,7 +5,7 @@ import telegram from "@/public/assets/icons/telegram.svg";
 import twitter from "@/public/assets/icons/twitter.svg";
 import Image from "next/image";
 import Link from "next/link";
-import Action from "../ui/Action";
+import Action from "../shared/Action";
 
 const Footer = () => {
   return (

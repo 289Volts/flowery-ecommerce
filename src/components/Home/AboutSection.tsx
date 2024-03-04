@@ -1,6 +1,6 @@
 import { TAboutSectionProps } from "@/types/Components/Views/views.types";
+import Action from "../shared/Action";
 import SectionHeading from "../shared/SectionHeading";
-import Action from "../ui/Action";
 
 const AboutSection = ({ data }: TAboutSectionProps) => {
   return (

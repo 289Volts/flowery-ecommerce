@@ -1,13 +1,10 @@
 import { TServicesSectionProps } from "@/types/Components/Views/views.types";
 import { urlFor } from "@/utils/Sanity/imageBuilder";
 import Image from "next/image";
+import Action from "../shared/Action";
 import SectionHeading from "../shared/SectionHeading";
-import Action from "../ui/Action";
 
 const Services = ({ data }: TServicesSectionProps) => {
-  //  const serviceImgOpt = urlFor(data.heroImage);
-  //  const serviceImg = heroImgOpt.url();
-  // console.log();
   return (
     <section className="md:text-center">
       <SectionHeading heading="our service" />
@@ -26,7 +23,10 @@ const Services = ({ data }: TServicesSectionProps) => {
             const serviceImgOpt = urlFor(imageUrl);
             const serviceImg = serviceImgOpt.url();
             return (
-              <div className={`relative lg:grid ${i === 0 ? "lg:grid-cols-2" : "xl:min-h-[721px]"}`} key={heading}>
+              <div
+                className={`relative lg:grid ${i === 0 ? "lg:grid-cols-2" : "xl:min-h-[721px]"}`}
+                key={heading}
+              >
                 {i === 1 && (
                   <div className="absolute inset-0 bg-black/40 z-[-1]" />
                 )}

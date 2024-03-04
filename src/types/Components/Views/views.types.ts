@@ -2,6 +2,7 @@ import {
   TAboutSection,
   THeroSection,
   TServices,
+  TTestimonialsSection,
   TWhyUs,
 } from "@/types/Sanity/sanity.type";
 
@@ -19,4 +20,8 @@ export type TWhyUsSectionProps = {
 
 export type TServicesSectionProps = {
   data: TServices;
+};
+
+export type TTestimonialsSectionProps = {
+  data: TTestimonialsSection;
 };

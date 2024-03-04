@@ -16,7 +16,7 @@ const Layout: FC<LayoutProp> = ({ children }) => {
     <>
       <QueryClientProvider client={queryClient}>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 text-primary">{children}</main>
         <Footer />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>

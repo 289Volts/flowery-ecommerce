@@ -42,11 +42,17 @@ export type TServices = Array<
   }
 >;
 
+export type TTestimonialsSection = {
+  paragraph: string;
+  author: string;
+}[];
+
 type HomeContent = {
   heroSection: THeroSection;
   about: TAboutSection;
   whyUs: TWhyUs;
   services: TServices;
+  testimonials: TTestimonialsSection;
 };
 
 export type THomeQueryResult = HomeContent[];

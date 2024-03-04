@@ -7,7 +7,7 @@ import telegram from "@/public/assets/icons/telegram.svg";
 import twitter from "@/public/assets/icons/twitter.svg";
 import contactImg from "@/public/assets/images/Home/contactImg.svg";
 import Image from "next/image";
-import Action from "../ui/Action";
+import Action from "../shared/Action";
 
 const Contact = () => {
   return (
