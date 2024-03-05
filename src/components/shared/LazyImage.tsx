@@ -6,6 +6,7 @@ type TLazyImageProps = {
   height: number;
   className?: string;
   alt?: string;
+  priority?: boolean;
 };
 const LazyImage = ({
   src,
@@ -13,6 +14,7 @@ const LazyImage = ({
   height,
   className = "w-full",
   alt = "",
+  priority,
 }: TLazyImageProps) => {
   return (
     <Image
@@ -20,7 +22,7 @@ const LazyImage = ({
       width={width}
       height={height}
       alt={alt}
-      priority
+      priority={priority}
       className={className}
     />
   );
