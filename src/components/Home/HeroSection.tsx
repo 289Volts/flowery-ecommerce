@@ -35,8 +35,8 @@ const HeroSection = ({ data }: THeroSectionProps) => {
         <div className="grid grid-cols-[1fr_1px_1fr] gap-x-4 border-t border-t-black pt-4 sm:gap-x-6 sm:pt-6">
           <DynamicImage
             src={heroImg}
-            width={heroImgOpt.width(256).options.width}
-            height={heroImgOpt.height(256).options.height}
+            width={heroImgOpt.width(256).options.width!}
+            height={heroImgOpt.height(256).options.height!}
           />
           <div className="h-full w-full bg-black" />
           <p className="text-pretty self-end text-xs sm:text-sm">
@@ -69,8 +69,8 @@ const HeroSection = ({ data }: THeroSectionProps) => {
                   <DynamicImage
                     src={categoryImg}
                     className={`h-full w-full lg:hover:scale-110 transition-transform duration-400 object-cover`}
-                    width={categoryImgOpt.width(360).options.width}
-                    height={categoryImgOpt.height(360).options.height}
+                    width={categoryImgOpt.width(360).options.width!}
+                    height={categoryImgOpt.height(360).options.height!}
                     priority={i === 0}
                   />
                 </div>
