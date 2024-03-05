@@ -4,13 +4,21 @@
 
 import { THeroSectionProps } from "@/types/Components/Views/views.types";
 import { urlFor } from "@/utils/Sanity/imageBuilder";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import CardLink from "../shared/CardLink";
+import { ImageSkeleton } from "../shared/ImageSkeleton";
+
+const Test = dynamic(() => import("../shared/LazyImage"), {
+  ssr: false,
+  loading: () => (
+    <ImageSkeleton className="md:min-w-[279.5px] md:min-h-[279px] lg:min-w-[455.5px] lg:min-h-[455px] xl:min-w-[231.4px] xl:min-h-[231.4px] 2xl:min-w-[255.5px] 2xl:min-h-[255.5px]" />
+  ),
+});
 
 const HeroSection = ({ data }: THeroSectionProps) => {
   const heroImgOpt = urlFor(data.heroImage);
   const heroImg = heroImgOpt.url();
-
   return (
     <section className="grid xl:grid-cols-2">
       <div className="w-fit px-4 py-10 sm:p-20 lg:p10 lg:p-8 xl:p-20">
@@ -26,11 +34,12 @@ const HeroSection = ({ data }: THeroSectionProps) => {
           </p>
         </div>
         <div className="grid grid-cols-[1fr_1px_1fr] gap-x-4 border-t border-t-black pt-4 sm:gap-x-6 sm:pt-6">
-          <Image
+          <Test
             src={heroImg}
             width={heroImgOpt.width(256).options.width}
             height={heroImgOpt.height(256).options.height}
             alt=""
+            priority
             className="w-full"
           />
           <div className="h-full w-full bg-black" />

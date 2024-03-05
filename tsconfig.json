@@ -34,6 +34,7 @@
     "src/schema.tss",
     "src/sanity.config.tss",
     "src/utils/Sanity/imageBuilder.js",
+    "src/utils/sanityClient.ts",
   ],
   "exclude": ["node_modules"],
 }

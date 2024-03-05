@@ -20,11 +20,11 @@ const Header = () => {
   };
   return (
     <header className="bg-white sticky top-0 z-10">
-      <div className="desktop hidden lg:grid grid-cols-[1fr_1fr] border-y border-y-black">
+      <div className="desktop hidden lg:grid grid-cols-[1fr_1fr] border-b border-b-black">
         <div className="flex">
           <Link
             href=""
-            className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-300 xl:w-[180px] p-7 text-center"
+            className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary hover:transition-[background] hover:duration-300 xl:w-[180px] p-7 text-center"
           >
             Shop
           </Link>
@@ -43,7 +43,7 @@ const Header = () => {
             Sign in
           </Link>
           <Button
-            className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-300 xl:w-[180px] border-y-0 p-7 capitalize border-l-0 justify-center !font-normal"
+            className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary hover:transition-[background] hover:duration-300 xl:w-[180px] border-y-0 p-7 capitalize border-r-0 border-l-0 justify-center !font-normal"
             variant="secondary"
           >
             Cart
