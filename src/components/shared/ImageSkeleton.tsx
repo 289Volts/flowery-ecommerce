@@ -6,7 +6,7 @@ type TImageSkeletonProps = {
 export const ImageSkeleton = ({ className }: TImageSkeletonProps) => {
   return (
     <Skeleton
-      className={`${className} min-h-[155px] min-w-[155px] rounded-sm`}
+      className={`${className} min-h-[155px] h-full w-full min-w-[155px] rounded-sm`}
     />
   );
 };
