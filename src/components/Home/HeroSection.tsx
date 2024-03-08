@@ -18,6 +18,7 @@ const DynamicImage = dynamic(() => import("../shared/LazyImage"), {
 const HeroSection = ({ data }: THeroSectionProps) => {
   const heroImgOpt = urlFor(data.heroImage);
   const heroImg = heroImgOpt.url();
+
   return (
     <section className="grid xl:grid-cols-2">
       <div className="w-fit px-4 py-10 sm:p-20 lg:p10 lg:p-8 xl:p-20">
@@ -45,45 +46,47 @@ const HeroSection = ({ data }: THeroSectionProps) => {
         </div>
       </div>
       <div className="border-t border-t-primary xl:border-l xl:border-l-primary xl:border-y-0 lg:grid">
-        {data.categories.map(
-          (
-            {
-              title,
-              slug: { current },
-              image: {
-                asset: { _ref: imageUrl },
+        {Array(5)
+          .fill([...data.categories][0])
+          .map(
+            (
+              {
+                title,
+                slug: { current },
+                image: {
+                  asset: { _ref: imageUrl },
+                },
               },
-            },
-            i,
-          ) => {
-            const categoryImgOpt = urlFor(imageUrl);
-            const categoryImg = categoryImgOpt.url();
-            return (
-              <div
-                key={title}
-                className={`grid grid-cols-2 min-h-[200px] md:min-h-[384px] xl:min-h-360px] ${i !== 0 ? "border-t-2 border-t-primary" : ""}`}
-              >
+              i,
+            ) => {
+              const categoryImgOpt = urlFor(imageUrl);
+              const categoryImg = categoryImgOpt.url();
+              return (
                 <div
-                  className={`min-w-[120px] min-h-[200px] group overflow-hidden ${i % 2 !== 0 ? "row-[1] col-[1] border-r-2 border-r-primary" : "row-[1] col-[2] border-l border-l-primary"}`}
+                  key={i}
+                  className={`grid grid-cols-2 min-h-[200px] md:min-h-[384px] xl:min-h-360px] ${i !== 0 ? "border-t-2 border-t-primary" : ""}`}
                 >
-                  <DynamicImage
-                    src={categoryImg}
-                    className={`h-full w-full lg:hover:scale-110 transition-transform duration-400 object-cover`}
-                    width={categoryImgOpt.width(360).options.width!}
-                    height={categoryImgOpt.height(360).options.height!}
-                    priority={i === 0}
+                  <div
+                    className={`min-w-[120px] min-h-[200px] group overflow-hidden ${i % 2 !== 0 ? "row-[1] col-[1] border-r-2 border-r-primary" : "row-[1] col-[2] border-l border-l-primary"}`}
+                  >
+                    <DynamicImage
+                      src={categoryImg}
+                      className={`h-full w-full lg:hover:scale-110 transition-transform duration-400 object-cover`}
+                      width={categoryImgOpt.width(360).options.width!}
+                      height={categoryImgOpt.height(360).options.height!}
+                      priority
+                    />
+                  </div>
+                  <CardLink
+                    key={title}
+                    textContent={title}
+                    href={current}
+                    linkText="Shop now"
                   />
                 </div>
-                <CardLink
-                  key={title}
-                  textContent={title}
-                  href={current}
-                  linkText="Shop now"
-                />
-              </div>
-            );
-          },
-        )}
+              );
+            },
+          )}
       </div>
     </section>
   );

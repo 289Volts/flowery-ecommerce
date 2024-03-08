@@ -39,16 +39,12 @@ const CustomCarousel = ({
   return (
     <Carousel setApi={setApi} className={containerClass}>
       <CarouselContent>{children}</CarouselContent>
-      {/* {showArrows && (
-        <>
-         
-        </>
-      )} */}
       <CarouselPrevious />
       <CarouselNext />
       <div className="flex gap-1 items-center justify-center mt-8">
         {Array.from({ length: count }).map((curr, index) => (
           <Action
+            key={index}
             buttonProps={{
               onClick: () => {
                 api?.scrollTo(index);
