@@ -23,7 +23,7 @@ const Header = () => {
       <div className="desktop hidden lg:grid grid-cols-[1fr_1fr] border-b border-b-black">
         <div className="flex">
           <Link
-            href="/categories"
+            href="/category"
             className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary hover:transition-[background] hover:duration-300 xl:w-[180px] p-7 text-center"
           >
             Shop

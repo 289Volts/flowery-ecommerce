@@ -21,14 +21,14 @@ const HomePage = async () => {
 }`);
 
   return (
-    <>
+    <main className="flex-1 text-primary">
       <HeroSection data={content[0].heroSection} />
       <AboutSection data={content[0].about} />
       <WhyUs data={content[0].whyUs} />
       <Contact />
       <Services data={content[0].services} />
       <Testimonials data={content[0].testimonials} />
-    </>
+    </main>
   );
 };
 
