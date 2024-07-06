@@ -9,7 +9,7 @@ import { client } from "@/utils/sanityClient";
 
 // import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
-const Home = async () => {
+const HomePage = async () => {
   const content = await client.fetch<THomeQueryResult>(`*[_type == "home"]{
     ...,
     heroSection {
@@ -20,7 +20,6 @@ const Home = async () => {
   }
 }`);
 
-  // console.log(content[0]);
   return (
     <>
       <HeroSection data={content[0].heroSection} />
@@ -33,4 +32,4 @@ const Home = async () => {
   );
 };
 
-export default Home;
+export default HomePage;

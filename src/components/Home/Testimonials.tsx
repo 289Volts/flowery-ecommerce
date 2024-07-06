@@ -2,7 +2,7 @@ import { CarouselItem } from "@/components/ui/carousel";
 import google from "@/public/assets/icons/google.svg";
 import { TTestimonialsSectionProps } from "@/types/Components/Views/views.types";
 import Image from "next/image";
-import CustomCarousel from "../blocks/Carousel";
+import CustomCarousel from "../Blocks/Carousel";
 import Action from "../shared/Action";
 
 const Testimonials = ({ data }: TTestimonialsSectionProps) => {
