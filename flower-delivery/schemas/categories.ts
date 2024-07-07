@@ -3,36 +3,33 @@ export default {
   type: 'document',
   title: 'Categories',
   fields: [
+    {name: 'title', type: 'string', title: 'Title'},
     {
-      name: 'freshFlowers',
+      name: 'homeImage',
+      type: 'image',
+      title: 'Home Image',
+    },
+    {
+      name: 'posterImage',
+      type: 'image',
+      title: 'Poster Image',
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+      },
+    },
+    {
+      name: 'products',
       type: 'array',
-      title: 'Fresh Flowers',
+      title: 'Products',
       of: [
         {
-          type: 'object',
-          fields: [
-            {
-              name: 'flowerType',
-              type: 'string',
-              title: 'Flower Type',
-            },
-            {
-              name: 'image',
-              type: 'image',
-              title: 'Image',
-            },
-            {
-              name: 'price',
-              type: 'number',
-              title: 'Price',
-            },
-            {
-              title: 'Categories',
-              name: 'categories',
-              type: 'array',
-              of: [{type: 'reference', to: [{type: 'category'}]}],
-            },
-          ],
+          type: 'reference',
+          to: [{type: 'product'}],
         },
       ],
     },

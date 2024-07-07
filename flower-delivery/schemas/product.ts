@@ -1,12 +1,17 @@
 export default {
-  name: 'category',
+  name: 'product',
   type: 'document',
-  title: 'Category',
+  title: 'Product',
   fields: [
     {
       name: 'title',
       type: 'string',
       title: 'Title',
+    },
+    {
+      name: 'price',
+      type: 'number',
+      title: 'Price',
     },
     {
       name: 'slug',

@@ -32,7 +32,7 @@ export default {
           title: 'Categories',
           name: 'categories',
           type: 'array',
-          of: [{type: 'reference', to: [{type: 'category'}]}],
+          of: [{type: 'reference', to: [{type: 'categories'}]}],
         },
       ],
     },

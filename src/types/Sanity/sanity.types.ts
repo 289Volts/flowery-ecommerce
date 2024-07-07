@@ -3,7 +3,13 @@ type Category = {
   slug: {
     current: string;
   };
-  image: {
+  homeImage: {
+    asset: {
+      _ref: string;
+      url: string;
+    };
+  };
+  posterImage: {
     asset: {
       _ref: string;
       url: string;
