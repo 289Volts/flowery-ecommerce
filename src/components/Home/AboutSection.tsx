@@ -1,18 +1,18 @@
-import { TAboutSectionProps } from "@/types/Components/Views/views.types";
+import { TAboutSectionProps } from "@/types/Components/Views/home.views.types";
 import Action from "../shared/Action";
 import SectionHeading from "../shared/SectionHeading";
 
 const AboutSection = ({ data }: TAboutSectionProps) => {
   return (
-    <section className="grid lg:grid-cols-2 text-primary border-y border-y-primary">
+    <section className="grid border-y border-y-primary text-primary lg:grid-cols-2">
       <SectionHeading heading="about us" />
-      <div className="py-10 px-4 sm:p-20 lg:p-10 xl:p-20 space-y-16 border-t border-t-primary lg:border-t-0 lg:border-l-primary lg:border-l">
+      <div className="space-y-16 border-t border-t-primary px-4 py-10 sm:p-20 lg:border-l lg:border-t-0 lg:border-l-primary lg:p-10 xl:p-20">
         <div className="">
-          <h4 className="uppercase text-mobileOverline mb-6">our story</h4>
-          <h3 className="text-mobileHeading3 mb-4 sm:text-desktopHeading3">
+          <h4 className="mb-6 text-mobileOverline uppercase">our story</h4>
+          <h3 className="mb-4 text-mobileHeading3 sm:text-desktopHeading3">
             {data.heading}
           </h3>
-          <p className="text-mobileBody text-pretty">{data.paragraph}</p>
+          <p className="text-pretty text-mobileBody">{data.paragraph}</p>
         </div>
         <Action
           variant="secondary"

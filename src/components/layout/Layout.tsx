@@ -1,7 +1,7 @@
 "use client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -11,12 +11,12 @@ interface LayoutProp {
 }
 
 const queryClient = new QueryClient();
-const Layout: FC<LayoutProp> = ({ children }) => {
+const Layout = ({ children }: LayoutProp) => {
   return (
     <>
       <QueryClientProvider client={queryClient}>
         <Header />
-        <main className="flex-1 text-primary">{children}</main>
+        {children}
         <Footer />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>

@@ -19,38 +19,38 @@ const Header = () => {
     setOpen(!open);
   };
   return (
-    <header className="bg-white sticky top-0 z-10">
-      <div className="desktop hidden lg:grid grid-cols-[1fr_1fr] border-b border-b-black">
+    <header className="sticky top-0 z-10 bg-white">
+      <div className="desktop hidden grid-cols-[1fr_1fr] border-b border-b-black lg:grid">
         <div className="flex">
           <Link
-            href="/categories"
-            className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary hover:transition-[background] hover:duration-300 xl:w-[180px] p-7 text-center"
+            href="/category"
+            className="w-max p-7 text-center hover:transition-[background] hover:duration-300 active:bg-white active:text-primary lg:w-[150px] lg:hover:bg-primary lg:hover:text-white xl:w-[180px]"
           >
             Shop
           </Link>
           <Link
             href=""
-            className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-300 xl:w-[180px] p-7 border-x border-x-black text-center"
+            className="w-max border-x border-x-black p-7 text-center hover:transition-[background]  hover:duration-300 active:bg-white active:text-primary lg:w-[150px] lg:hover:bg-primary lg:hover:text-white xl:w-[180px]"
           >
             Contact
           </Link>
         </div>
-        <div className="flex col-end-4">
+        <div className="col-end-4 flex">
           <Link
             href=""
-            className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary  hover:transition-[background] hover:duration-300 xl:w-[180px] p-7 border-x border-x-black text-center"
+            className="w-max border-x border-x-black p-7 text-center hover:transition-[background]  hover:duration-300 active:bg-white active:text-primary lg:w-[150px] lg:hover:bg-primary lg:hover:text-white xl:w-[180px]"
           >
             Sign in
           </Link>
           <Button
-            className="w-max lg:w-[150px] lg:hover:bg-primary lg:hover:text-white active:bg-white active:text-primary hover:transition-[background] hover:duration-300 xl:w-[180px] border-y-0 p-7 capitalize border-r-0 border-l-0 justify-center !font-normal"
+            className="w-max justify-center border-y-0 border-l-0 p-7 !font-normal capitalize hover:transition-[background] hover:duration-300 active:bg-white active:text-primary lg:w-[150px] lg:hover:bg-primary lg:hover:text-white xl:w-[180px]"
             variant="secondary"
           >
             Cart
           </Button>
         </div>
       </div>
-      <div className="mobile grid grid-cols-[1fr_1fr] lg:hidden border-y border-y-black ">
+      <div className="mobile grid grid-cols-[1fr_1fr] border-y border-y-black lg:hidden ">
         <Button
           buttonProps={{
             onClick: handleOpenMenu,
@@ -62,21 +62,21 @@ const Header = () => {
         >
           <Image src={menu as string} alt="" className="" />
         </Button>
-        <Button className="w-max col-end-4 border-y-0 p-4" variant="secondary">
+        <Button className="col-end-4 w-max border-y-0 p-4" variant="secondary">
           <Image src={cartIcon as string} alt="" className="" />
         </Button>
         <div
-          className={`drawer fixed sm:grid-cols-2 inset-0  transition-transform duration-500 grid ${
-            !open ? "-translate-x-[110%]" : "translate-x-0 drawer-open z-10"
+          className={`drawer fixed inset-0 grid  transition-transform duration-500 sm:grid-cols-2 ${
+            !open ? "-translate-x-[110%]" : "drawer-open z-10 translate-x-0"
           }`}
         >
-          <div className="flex flex-col bg-white border border-black">
+          <div className="flex flex-col border border-black bg-white">
             <Button
               buttonProps={{
                 onClick: handleOpenMenu,
                 "aria-label": "close menu",
               }}
-              className="w-max col-end-4 border-y-0 p-4"
+              className="col-end-4 w-max border-y-0 p-4"
             >
               <Image src={close as string} alt="" className="" />
             </Button>
@@ -86,7 +86,7 @@ const Header = () => {
                   <Link
                     onClick={handleOpenMenu}
                     href=""
-                    className="p-5 border-t border-t-black flex w-full"
+                    className="flex w-full border-t border-t-black p-5"
                   >
                     Sign in
                   </Link>
@@ -94,8 +94,8 @@ const Header = () => {
                 <li className="">
                   <Link
                     onClick={handleOpenMenu}
-                    href=""
-                    className="p-5 border-t border-t-black flex w-full"
+                    href="/category"
+                    className="flex w-full border-t border-t-black p-5"
                   >
                     Shop
                   </Link>
@@ -103,7 +103,7 @@ const Header = () => {
                 <li className="">
                   <span
                     onClick={handleOpenMenu}
-                    className="p-5 border-t border-t-black flex w-full"
+                    className="flex w-full border-t border-t-black p-5"
                   >
                     Services
                   </span>
@@ -112,7 +112,7 @@ const Header = () => {
                   <Link
                     onClick={handleOpenMenu}
                     href=""
-                    className="p-5 border-t border-t-black flex w-full"
+                    className="flex w-full border-t border-t-black p-5"
                   >
                     Contact
                   </Link>
@@ -120,13 +120,13 @@ const Header = () => {
                 <li className="">
                   <Link
                     onClick={handleOpenMenu}
-                    href=""
-                    className="p-5 border-y border-y-black flex w-full"
+                    href="/about"
+                    className="flex w-full border-y border-y-black p-5"
                   >
                     About us
                   </Link>
                 </li>
-                <li className="p-5 flex flex-col gap-4">
+                <li className="flex flex-col gap-4 p-5">
                   <span onClick={handleOpenMenu} className="w-full">
                     Shipping & returns
                   </span>
@@ -139,7 +139,7 @@ const Header = () => {
                 </li>
               </ul>
             </nav>
-            <div className="p-5 flex items-center justify-between mt-auto border-y border-y-black">
+            <div className="mt-auto flex items-center justify-between border-y border-y-black p-5">
               <Image
                 onClick={handleOpenMenu}
                 src={instagram as string}
@@ -174,7 +174,7 @@ const Header = () => {
           </div>
           <div
             onClick={handleOpenMenu}
-            className={`bg-[rgba(210, 210, 215, 0.35)] backdrop-blur-sm hidden sm:block`}
+            className={`bg-[rgba(210, 210, 215, 0.35)] hidden backdrop-blur-sm sm:block`}
           />
         </div>
       </div>

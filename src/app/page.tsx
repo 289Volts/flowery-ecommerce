@@ -4,7 +4,7 @@ import HeroSection from "@/components/Home/HeroSection";
 import Services from "@/components/Home/Services";
 import Testimonials from "@/components/Home/Testimonials";
 import WhyUs from "@/components/Home/WhyUs";
-import { THomeQueryResult } from "@/types/Sanity/sanity.types";
+import { THomeQueryResult } from "@/types/Sanity/home.sanity.types";
 import { client } from "@/utils/sanityClient";
 
 // import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
@@ -21,14 +21,14 @@ const HomePage = async () => {
 }`);
 
   return (
-    <>
+    <main className="flex-1 text-primary">
       <HeroSection data={content[0].heroSection} />
       <AboutSection data={content[0].about} />
       <WhyUs data={content[0].whyUs} />
       <Contact />
       <Services data={content[0].services} />
       <Testimonials data={content[0].testimonials} />
-    </>
+    </main>
   );
 };
 

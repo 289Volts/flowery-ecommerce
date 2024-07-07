@@ -4,7 +4,7 @@ import {
   TServices,
   TTestimonialsSection,
   TWhyUs,
-} from "@/types/Sanity/sanity.types";
+} from "@/types/Sanity/home.sanity.types";
 
 export type THeroSectionProps = {
   data: THeroSection;

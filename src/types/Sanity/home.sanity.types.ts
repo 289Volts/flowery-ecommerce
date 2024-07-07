@@ -1,14 +1,23 @@
+import { Product } from "./product.sanity.types";
+
 type Category = {
   title: string;
   slug: {
     current: string;
   };
-  image: {
+  homeImage: {
     asset: {
       _ref: string;
       url: string;
     };
   };
+  posterImage: {
+    asset: {
+      _ref: string;
+      url: string;
+    };
+  };
+  products: Product[];
 };
 
 type THeadingAndParagraph = {

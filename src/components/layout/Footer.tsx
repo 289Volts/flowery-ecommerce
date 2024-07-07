@@ -9,8 +9,8 @@ import Action from "../shared/Action";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-t-primary divide-x divide-x-primary divide-y divide-primary md:grid grid-cols-2 xl:grid-cols-4">
-      <div className="px-4 py-10 md:px-10 space-y-4 text-pretty">
+    <footer className="divide-x-primary grid-cols-2 divide-x divide-y divide-primary border-t border-t-primary md:grid xl:grid-cols-4">
+      <div className="text-pretty space-y-4 px-4 py-10 md:px-10">
         <p className="text-mobileBody">
           Remember to offer beautiful flowers from Kyiv LuxeBouquets Valentines
           Day, Mothers Day, Christmas...
@@ -21,13 +21,13 @@ const Footer = () => {
           name="email"
           placeholder="Your Email"
           id=""
-          className="px-4 py-2 h-[48px] border border-gray-light bg-white placeholder:text-gray-dark placeholder:text-sm w-full md:mt-6"
+          className="h-[48px] w-full border border-gray-light bg-white px-4 py-2 placeholder:text-sm placeholder:text-gray-dark md:mt-6"
         />
         <Action variant="primary" className="w-full justify-center ">
           REMIND
         </Action>
       </div>
-      <div className="px-4 py-10 md:px-10 space-y-4 md:space-y-6 md:!border-t-0">
+      <div className="space-y-4 px-4 py-10 md:space-y-6 md:!border-t-0 md:px-10">
         <h2 className="text-mobileHeading5 text-gray-dark md:text-desktopSubtitle">
           Contact Us
         </h2>
@@ -49,7 +49,7 @@ const Footer = () => {
           <h3 className="text-mobileCaption text-gray-dark md:text-desktopCaption">
             General Enquiry
           </h3>
-          <p className="text-mobileLink md:text-desktopLink break-all">
+          <p className="break-all text-mobileLink md:text-desktopLink">
             Kiev.Florist.Studio@gmail.com
           </p>
         </div>
@@ -64,7 +64,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="px-4 py-10 md:px-10 space-y-4 md:space-y-6 xl:!border-t-0">
+      <div className="space-y-4 px-4 py-10 md:space-y-6 md:px-10 xl:!border-t-0">
         <div className="space-y-4">
           <h2 className="text-mobileHeading5 text-gray-dark">Shop</h2>
           <ul className="space-y-2 text-mobileLink md:text-desktopLink">
@@ -85,7 +85,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="px-4 py-10 md:px-10 space-y-4 md:space-y-6 xl:!border-t-0">
+      <div className="space-y-4 px-4 py-10 md:space-y-6 md:px-10 xl:!border-t-0">
         <div className="space-y-4">
           <h2 className="text-mobileHeading5 text-gray-dark">About Us</h2>
           <ul className="space-y-2 text-mobileLink md:text-desktopLink">

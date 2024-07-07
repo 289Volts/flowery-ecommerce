@@ -8,7 +8,7 @@ const button = tv({
   variants: {
     variant: {
       primary:
-        "bg-primary text-white border-none border-none py-4 px-6 flex gap-2 items-center uppercase",
+        "bg-primary text-white border-none py-4 px-6 flex gap-2 items-center uppercase",
       secondary:
         "bg-white text-primary border border-black py-4 px-6 flex gap-2 items-center uppercase",
       tertiary:
