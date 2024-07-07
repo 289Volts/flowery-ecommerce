@@ -9,7 +9,7 @@ const CategoryPage = async ({ params }: { params: { id: string } }) => {
     `*[_type == "categories" && slug.current == "${params.id}"]{
     ...,
     products[]->{  
-      image,
+      disImage,
       slug,
       title
     }
@@ -19,8 +19,8 @@ const CategoryPage = async ({ params }: { params: { id: string } }) => {
   const posterImg = posterImgOpt.url();
 
   return (
-    <main className="flex-1 lg:grid lg:grid-cols-[1fr_1.4fr] xl:grid-cols-2">
-      <div className="left-0 top-[58px] h-[50svh] lg:sticky lg:top-[81px] lg:h-[600px] lg:border-b lg:border-b-black xl:h-[630px] 2xl:h-[720px]">
+    <main className="w-full flex-1 md:flex">
+      <div className="md:flex-1 lg:border-b lg:border-b-black">
         <Image
           src={posterImg}
           alt=""
@@ -29,24 +29,23 @@ const CategoryPage = async ({ params }: { params: { id: string } }) => {
           className="h-full w-full object-cover"
         />
       </div>
-      <section className="border-x border-t border-x-black border-t-black md:grid md:grid-cols-2 lg:border-t-0">
-        {content[0].products.map(({ image, slug }, i) => {
-          const productImgOpt = urlFor(image);
-          const productImg = productImgOpt.url();
+      <section className="border-x border-t border-x-black border-t-black md:grid lg:border-t-0">
+        {content[0].products.map(({ disImage, slug }, i) => {
+          const productImgOpt = urlFor(disImage);
+          const productImg = productImgOpt?.url();
           return (
             <Link
               href={`/product/${slug.current}`}
               key={i}
-              className={`aspect-squar inline-block h-[360px] w-full min-w-[280px] max-w-full border-b border-b-black last:border-b-0 odd:border-r md:h-[384px] md:odd:border-r-black lg:h-[300px] xl:h-[315px] 2xl:h-[360px] [&:nth-last-child(2)]:border-b-0`}
+              className={`1xl:h-[360px] block h-full min-w-[280px] border-b border-b-black  md:h-[384px] md:w-max lg:h-[300px] xl:h-[315px]`}
             >
               <div className="relative h-full w-full">
                 <Image
                   src={productImg}
                   alt=""
-                  fill
-                  // width={productImgOpt.width(360).options.width}
-                  // height={productImgOpt.height(360).options.height}
-                  className="object-cove h-full w-full"
+                  width={productImgOpt.width(360).options.width}
+                  height={productImgOpt.height(360).options.height}
+                  className="h-full w-full"
                 />
               </div>
             </Link>

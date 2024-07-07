@@ -1,3 +1,5 @@
+import { Product } from "./product.sanity.types";
+
 type Categories = {
   title: string;
   slug: {
@@ -6,27 +8,14 @@ type Categories = {
   homeImage: {
     asset: {
       _ref: string;
-      url: string;
     };
   };
   posterImage: {
     asset: {
       _ref: string;
-      url: string;
     };
   };
-  products: {
-    title: string;
-    slug: {
-      current: string;
-    };
-    image: {
-      asset: {
-        _ref: string;
-        url: string;
-      };
-    };
-  }[];
+  products: Product[];
 };
 
 export type TCategoriesQueryResult = Categories[];

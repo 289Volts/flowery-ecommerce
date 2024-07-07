@@ -1,3 +1,5 @@
+import { Product } from "./product.sanity.types";
+
 type Category = {
   title: string;
   slug: {
@@ -15,18 +17,7 @@ type Category = {
       url: string;
     };
   };
-  products: {
-    title: string;
-    slug: {
-      current: string;
-    };
-    image: {
-      asset: {
-        _ref: string;
-        url: string;
-      };
-    };
-  }[];
+  products: Product[];
 };
 
 type THeadingAndParagraph = {

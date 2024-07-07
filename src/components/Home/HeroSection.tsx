@@ -63,7 +63,7 @@ const HeroSection = ({ data }: THeroSectionProps) => {
             return (
               <div
                 key={i}
-                className={`xl:min-h-360px] grid min-h-[200px] grid-cols-2 md:min-h-[384px] ${i !== 0 ? "border-t-2 border-t-primary" : ""}`}
+                className={`grid min-h-[200px] grid-cols-2 first:border-b first:border-b-black md:h-[384px] ${i !== 0 ? "border-t-2 border-t-primary" : ""}`}
               >
                 <div
                   className={`group min-h-[200px] min-w-[120px] overflow-hidden ${i % 2 !== 0 ? "col-[1] row-[1] border-r-2 border-r-primary" : "col-[2] row-[1] border-l border-l-primary"}`}

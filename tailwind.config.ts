@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        "1xl": "1440px",
+      },
       fontSize: {
         desktopHeading1: [
           "4.2rem",
