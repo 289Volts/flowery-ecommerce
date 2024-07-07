@@ -15,6 +15,18 @@ type Category = {
       url: string;
     };
   };
+  products: {
+    title: string;
+    slug: {
+      current: string;
+    };
+    image: {
+      asset: {
+        _ref: string;
+        url: string;
+      };
+    };
+  }[];
 };
 
 type THeadingAndParagraph = {

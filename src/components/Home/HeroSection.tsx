@@ -2,9 +2,8 @@
 // "use client";
 // import { useQuery } from "@tanstack/react-query";
 
-import { THeroSectionProps } from "@/types/Components/Views/views.types";
+import { THeroSectionProps } from "@/types/Components/Views/home.views.types";
 import { urlFor } from "@/utils/Sanity/imageBuilder";
-import console from "console";
 import dynamic from "next/dynamic";
 import CardLink from "../shared/CardLink";
 import { ImageSkeleton } from "../shared/ImageSkeleton";
@@ -17,7 +16,7 @@ const DynamicImage = dynamic(() => import("../shared/LazyImage"), {
 });
 
 const HeroSection = ({ data }: THeroSectionProps) => {
-  console.log(data);
+  // console.log(data);
   const heroImgOpt = urlFor(data.heroImage);
   const heroImg = heroImgOpt.url();
 
@@ -80,7 +79,7 @@ const HeroSection = ({ data }: THeroSectionProps) => {
                 <CardLink
                   key={title}
                   textContent={title}
-                  href={`categories/${current}`}
+                  href={`category/${current}`}
                   linkText="Shop now"
                 />
               </div>

@@ -4,7 +4,7 @@ import HeroSection from "@/components/Home/HeroSection";
 import Services from "@/components/Home/Services";
 import Testimonials from "@/components/Home/Testimonials";
 import WhyUs from "@/components/Home/WhyUs";
-import { THomeQueryResult } from "@/types/Sanity/sanity.types";
+import { THomeQueryResult } from "@/types/Sanity/home.sanity.types";
 import { client } from "@/utils/sanityClient";
 
 // import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';

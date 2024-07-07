@@ -1,4 +1,4 @@
-import { TServicesSectionProps } from "@/types/Components/Views/views.types";
+import { TServicesSectionProps } from "@/types/Components/Views/home.views.types";
 import { urlFor } from "@/utils/Sanity/imageBuilder";
 import Image from "next/image";
 import Action from "../shared/Action";
@@ -28,22 +28,22 @@ const Services = ({ data }: TServicesSectionProps) => {
                 key={heading}
               >
                 {i === 1 && (
-                  <div className="absolute inset-0 bg-black/40 z-[-1]" />
+                  <div className="absolute inset-0 z-[-1] bg-black/40" />
                 )}
                 <Image
                   src={"" + serviceImg}
-                  className={`w-full h-full md:max-h-[500px] lg:max-h-[721px] object-cover object-top ${i === 1 ? "absolute inset-0 object-cover z-[-2]" : ""}`}
+                  className={`h-full w-full object-cover object-top md:max-h-[500px] lg:max-h-[721px] ${i === 1 ? "absolute inset-0 z-[-2] object-cover" : ""}`}
                   alt=""
                   width={serviceImgOpt.width(360).options.width}
                   height={serviceImgOpt.height(360).options.height}
                 />
                 <div
-                  className={`text-center py-10 sm:p-20 px-4 border-t border-t-primary lg:flex lg:flex-col lg:justify-center lg:items-center ${i === 1 ? "text-white py-[3.2rem] lg:w-[80%] lg:mx-auto xl:w-[58%]" : ""}`}
+                  className={`border-t border-t-primary px-4 py-10 text-center sm:p-20 lg:flex lg:flex-col lg:items-center lg:justify-center ${i === 1 ? "py-[3.2rem] text-white lg:mx-auto lg:w-[80%] xl:w-[58%]" : ""}`}
                 >
-                  <h4 className="text-mobileOverline mb-6 sm:text-desktopOverline uppercase">
+                  <h4 className="mb-6 text-mobileOverline uppercase sm:text-desktopOverline">
                     service
                   </h4>
-                  <div className="space-y-4 mb-16">
+                  <div className="mb-16 space-y-4">
                     <h2 className="text-mobileHeading2 sm:text-desktopHeading2">
                       {heading}
                     </h2>
@@ -53,7 +53,7 @@ const Services = ({ data }: TServicesSectionProps) => {
                     isLink
                     href="/subscriptions"
                     variant={i === 1 ? "tertiary" : "secondary"}
-                    className="uppercase md:w-fit mx-auto"
+                    className="mx-auto uppercase md:w-fit"
                   >
                     subscribe now
                   </Action>
